@@ -1,3 +1,73 @@
+# Psych Engine-JP - 「Psych Engine」の日本語版エンジン
+## Psych Engineって何？
+
+→リズムゲーム「Friday Night Funkin'」の本体を改良したエンジン。
+
+## Friday Night Funkin'ってどんなゲーム？
+
+→昔のリズムゲーム「パラッパラッパー」を彷彿とさせるデザインにリズムゲームユーザーに馴染みやすいUI・プレイスタイルを用いた最高にクールでFunkin'なリズムゲーム。
+
+## Psych Engine-JPとは？
+
+→「Psych Engine」を日本語化・微軽量化し、初心者でもFNF'に馴染みやすくしたエンジン。
+
+前身は「JPsych Engine」。わらびもちぃさんありがとう！！
+
+## リンク
+
+[本家FRIDAY NIGHT FUNKIN'](https://www.newgrounds.com/portal/view/770371/)
+
+[Psych Engine](https://gamebanana.com/mods/309789/)
+
+[JPsych Engine](https://fnf-jpsych-engine.jimdofree.com/)
+
+## 作者について
+
+ただの中2。変な新人男子VTuberでもあるよ:))
+
+[YouTube](https://youtube.com/@Shun_Yukkuri_/)
+
+[𝕏](https://twitter.com/Shun_Yoro_)
+
+[Misskey.io](https://misskey.io/@Shundesu)
+
+[贈り物(贈れば贈るほどクオリティとモチベーションがアップします)](https://www.amazon.jp/hz/wishlist/ls/308JK8MWCQXVR?ref_=wl_share)
+
+# Psych Engine-JP - Japanese version of "Psych Engine"
+## What is Psych Engine?
+
+→An engine that improves on the main body of the rhythm game "Friday Night Funkin'".
+
+## What kind of game is Friday Night Funkin'?
+
+→A cool and Funkin' rhythm game with a design reminiscent of the old rhythm game "Parappa Rappa" and a UI and play style that rhythm game users can easily get used to.
+
+## What is "Psych Engine-JP"?
+
+→Psych Engine-JP is a Japanese-language version of Psych Engine that is slightly lighter in weight, making it easier for beginners to get used to FNF'.
+
+Its predecessor is "JPsych Engine". Thank you, warabi-mt!
+
+## Link
+
+[FRIDAY NIGHT FUNKIN'](https://www.newgrounds.com/portal/view/770371/)
+
+[Psych Engine](https://gamebanana.com/mods/309789/)
+
+[JPsych Engine](https://fnf-jpsych-engine.jimdofree.com/)
+
+## About the author
+
+Just a middle schooler. also a weird new male VTuber>:))) lolololololololololoolololoolol
+
+[YouTube](https://youtube.com/@Shun_Yukkuri_/)
+
+[𝕏](https://twitter.com/Shun_Yoro_)
+
+[Misskey.io](https://misskey.io/@Shundesu)
+
+[Gifts (the more you give, the more quality and motivation you will receive lol)](https://www.amazon.jp/hz/wishlist/ls/308JK8MWCQXVR?ref_=wl_share)
+
 # Friday Night Funkin' - Psych Engine
 Engine originally used on [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it. Also aiming to be an easier alternative to newbie coders.
 
@@ -110,3 +180,7 @@ _____________________________________
 * You can reset your Score on Freeplay/Story Mode by pressing Reset button.
 * You can listen to a song or adjust Scroll Speed/Damage taken/etc. on Freeplay by pressing Space.
 * You can enable "Combo Stacking" in Gameplay Options. This causes the combo sprites to just be one sprite with an animation rather than sprites spawning each note hit.
+
+# FRIDAY NIGHT FUNKIN'
+
+©The Funkin' Crew Inc. 2020-2023
