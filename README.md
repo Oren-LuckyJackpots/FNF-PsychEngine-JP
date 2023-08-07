@@ -1,4 +1,5 @@
 # Psych Engine-JP - 「Psych Engine」の日本語版エンジン
+
 ## Psych Engineって何？
 
 →リズムゲーム「Friday Night Funkin'」の本体を改良したエンジン。
@@ -12,6 +13,11 @@
 →「Psych Engine」を日本語化・微軽量化し、初心者でもFNF'に馴染みやすくしたエンジン。
 
 前身は「JPsych Engine」。わらびもちぃさんありがとう！！
+
+# 動画やMODで使用するなら
+
+動画やMODの説明欄に本家Friday Night Funkin'のリンク、Psych EngineのリンクそしてこのPsych Engine-JPのリンクを貼って下さい
+あとShundesuに𝕏やらなんやらで一言伝えてくれると嬉しいな、メンションもしていいし
 
 ## リンク
 
@@ -34,6 +40,7 @@
 [贈り物(贈れば贈るほどクオリティとモチベーションがアップします)](https://www.amazon.jp/hz/wishlist/ls/308JK8MWCQXVR?ref_=wl_share)
 
 # Psych Engine-JP - Japanese version of "Psych Engine"
+
 ## What is Psych Engine?
 
 →An engine that improves on the main body of the rhythm game "Friday Night Funkin'".
@@ -47,6 +54,11 @@
 →Psych Engine-JP is a Japanese-language version of Psych Engine that is slightly lighter in weight, making it easier for beginners to get used to FNF'.
 
 Its predecessor is "JPsych Engine". Thank you, warabi-mt!
+
+# If you want to use it in your videos or mods
+
+Please put the link to Friday Night Funkin', the link to Psych Engine, and the link to Psych Engine-JP in the description of your video or mod.
+Also, please let Shundesu know what you're doing with 𝕏 and stuff, and feel free to menshon me!
 
 ## Link
 
