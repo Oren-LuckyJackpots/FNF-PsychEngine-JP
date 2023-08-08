@@ -99,7 +99,7 @@
 		<assets path='example_mods' rename='mods' embed='false'/>
 	</section>
 	<assets path='art/readme.txt' rename="FRIDAY NIGHT FUNKIN' Readme.txt">
-	<assets path='art/PE-JPReadme.txt' rename="Psych Engine-JP Readme and ReleaseNote.txt" />
+	<assets path='art/PE-JPreadme.txt' rename="Psych Engine-JP Readme and ReleaseNote.txt" />
 
 	<!-- _______________________________ Libraries ______________________________ -->
 
@@ -173,4 +173,5 @@
 	<icon path="art/icon32.png" size='32'/>
 	<icon path="art/icon64.png" size='64'/>
 	<icon path="art/iconOG.png" />
+	</assets>
 </project>

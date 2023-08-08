@@ -2,28 +2,28 @@ package backend;
 
 class Achievements {
 	public static var achievementsStuff:Array<Dynamic> = [ //Name, Description, Achievement save tag, Hidden achievement
-		["Freaky on a Friday Night",	"Play on a Friday... Night.",						'friday_night_play',	 true],
-		["She Calls Me Daddy Too",		"Beat Week 1 on Hard with no Misses.",				'week1_nomiss',			false],
-		["No More Tricks",				"Beat Week 2 on Hard with no Misses.",				'week2_nomiss',			false],
-		["Call Me The Hitman",			"Beat Week 3 on Hard with no Misses.",				'week3_nomiss',			false],
-		["Lady Killer",					"Beat Week 4 on Hard with no Misses.",				'week4_nomiss',			false],
-		["Missless Christmas",			"Beat Week 5 on Hard with no Misses.",				'week5_nomiss',			false],
-		["Highscore!!",					"Beat Week 6 on Hard with no Misses.",				'week6_nomiss',			false],
-		["God Effing Damn It!",			"Beat Week 7 on Hard with no Misses.",				'week7_nomiss',			false],
-		["What a Funkin' Disaster!",	"Complete a Song with a rating lower than 20%.",	'ur_bad',				false],
-		["Perfectionist",				"Complete a Song with a rating of 100%.",			'ur_good',				false],
-		["Roadkill Enthusiast",			"Watch the Henchmen die over 50 times.",			'roadkill_enthusiast',	false],
-		["Oversinging Much...?",		"Hold down a note for 10 seconds.",					'oversinging',			false],
-		["Hyperactive",					"Finish a Song without going Idle.",				'hype',					false],
-		["Just the Two of Us",			"Finish a Song pressing only two keys.",			'two_keys',				false],
-		["Toaster Gamer",				"Have you tried to run the game on a toaster?",		'toastie',				false],
-		["Debugger",					"Beat the \"Test\" Stage from the Chart Editor.",	'debugger',				 true]
+		["Freaky on a Friday Night",	"FridayのNightにFunkin'した。",						'friday_night_play',	 true],
+		["She Calls Me Daddy Too",		"Week 1をフルコンボ！",                				'week1_nomiss',			false],
+		["No More Tricks",				"Week 2をフルコンボ！",                				'week2_nomiss',			false],
+		["Call Me The Hitman",			"Week 3をフルコンボ！",                				'week3_nomiss',			false],
+		["Lady Killer",					"Week 4をフルコンボ！",                				'week4_nomiss',			false],
+		["Missless Christmas",			"Week 5をフルコンボ！",                				'week5_nomiss',			false],
+		["Highscore!!",					"Week 6をフルコンボ！",                				'week6_nomiss',			false],
+		["God Effing Damn It!",			"Week 7をフルコンボ！",                				'week7_nomiss',			false],
+		["What a Funkin' Disaster!",	"20%以下の精度で曲をクリアする。",                 	'ur_bad',				false],
+		["Perfectionist",				"全てSick!!の状態で曲をクリアする。",   			'ur_good',				false],
+		["Roadkill Enthusiast",			"Henchmenを50体ほど倒す。",             			'roadkill_enthusiast',	false],
+		["Oversinging Much...?",		"プレイ中にノーツを押したままにして10秒が経過した。", 'oversinging',			false],
+		["Hyperactive",					"動いている状態で曲をクリアする。",    				'hype',					false],
+		["Just the Two of Us",			"2つのキーを押したまま曲をクリアする。",   			'two_keys',				false],
+		["Toaster Gamer",				"トースターのように低スペックなPCでFunkin'しましたね！？",'toastie',				false],
+		["Debugger",					"CHART EDITORから隠し曲「Test」をクリアする。",     	'debugger',				 true]
 	];
 	public static var achievementsMap:Map<String, Bool> = new Map<String, Bool>();
 
 	public static var henchmenDeath:Int = 0;
 	public static function unlockAchievement(name:String):Void {
-		FlxG.log.add('Completed achievement "' + name +'"');
+		FlxG.log.add('実績解除！ "' + name +'"');
 		achievementsMap.set(name, true);
 		FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
 	}

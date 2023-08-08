@@ -2,6 +2,7 @@ package options;
 
 import states.MainMenuState;
 import backend.StageData;
+import openfl.Lib;
 
 class OptionsState extends MusicBeatState
 {
@@ -34,6 +35,7 @@ class OptionsState extends MusicBeatState
 	override function create() {
 		#if desktop
 		DiscordClient.changePresence("Options Menu", null);
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Options";
 		#end
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));

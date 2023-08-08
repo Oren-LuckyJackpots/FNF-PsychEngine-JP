@@ -5,6 +5,7 @@ import objects.StrumNote;
 import objects.NoteSplash;
 import flixel.addons.ui.FlxInputText;
 import flixel.addons.ui.FlxUINumericStepper;
+import openfl.Lib;
 
 class NoteSplashDebugState extends MusicBeatState
 {
@@ -60,7 +61,7 @@ class NoteSplashDebugState extends MusicBeatState
 		//
 		var txtx = 60;
 		var txty = 640;
-		var animName:FlxText = new FlxText(txtx, txty, 'Animation name:', 16);
+		var animName:FlxText = new FlxText(txtx, txty, 'アニメーション名:', 16);
 		add(animName);
 
 		nameInputText = new FlxInputText(txtx, txty + 20, 360, '', 16);
@@ -81,7 +82,7 @@ class NoteSplashDebugState extends MusicBeatState
 		};
 		add(nameInputText);
 		
-		add(new FlxText(txtx, txty - 84, 0, 'Min/Max Framerate:', 16));
+		add(new FlxText(txtx, txty - 84, 0, '最小/最大 FPS:', 16));
 		stepperMinFps = new FlxUINumericStepper(txtx, txty - 60, 1, 22, 1, 60, 0);
 		stepperMinFps.name = 'min_fps';
 		add(stepperMinFps);
@@ -108,10 +109,10 @@ class NoteSplashDebugState extends MusicBeatState
 		add(curAnimText);
 
 		var text:FlxText = new FlxText(0, 520, FlxG.width,
-			"Press SPACE to Reset animation\n
-			Press ENTER twice to save to the loaded Note Splash PNG's folder\n
-			A/D change selected note - Arrow Keys to change offset (Hold shift for 10x)\n
-			Ctrl + C/V - Copy & Paste", 16);
+			"SPACEでアニメーションをリセット\n
+			ENTERを2回押し、読み込んだノートスプラッシュPNGのフォルダに保存\n
+			A/D ノーツを変更 - 矢印キーでオフセットを変更(Shiftを押しながらすると10倍)\n
+			Ctrl + C/V - コピー・ペースト", 16);
 		text.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		text.scrollFactor.set();
 		add(text);
@@ -125,6 +126,7 @@ class NoteSplashDebugState extends MusicBeatState
 		changeSelection();
 		super.create();
 		FlxG.mouse.visible = true;
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - NOTE SPLASH DEBUG"
 	}
 
 	var curAnim:Int = 1;
@@ -207,7 +209,7 @@ class NoteSplashDebugState extends MusicBeatState
 
 		if(FlxG.keys.justPressed.ENTER)
 		{
-			savedText.text = 'Press ENTER again to save.';
+			savedText.text = 'ENTERでセーブ';
 			if(pressEnterToSave > 0) //save
 			{
 				saveFile();
@@ -240,7 +242,7 @@ class NoteSplashDebugState extends MusicBeatState
 			else if(forceFrame >= maxFrame) forceFrame = maxFrame - 1;
 			//trace('curFrame: $forceFrame');
 			
-			curFrameText.text = 'Force Frame: ${forceFrame+1} / $maxFrame\n(Press Q/E to change)';
+			curFrameText.text = 'Force Frame: ${forceFrame+1} / $maxFrame\n(QもしくはEで変更)';
 			splashes.forEachAlive(function(spr:FlxSprite) {
 				spr.animation.curAnim.paused = true;
 				spr.animation.curAnim.curFrame = forceFrame;
@@ -292,7 +294,7 @@ class NoteSplashDebugState extends MusicBeatState
 
 		var pathSplit:Array<String> = (Paths.getPath('images/$texturePath.png', IMAGE, true).split('.png')[0] + '.txt').split(':');
 		var path:String = pathSplit[pathSplit.length-1].trim();
-		savedText.text = 'Saved to: $path';
+		savedText.text = 'セーブ先: $path';
 		sys.io.File.saveContent(path, strToSave);
 
 		//trace(strToSave);
@@ -362,8 +364,8 @@ class NoteSplashDebugState extends MusicBeatState
 			if(curAnim > maxAnims) curAnim = 1;
 			else if(curAnim < 1) curAnim = maxAnims;
 
-			curAnimText.text = 'Current Animation: $curAnim / $maxAnims\n(Press W/S to change)';
-			curFrameText.text = 'Force Frame Disabled\n(Press Q/E to change)';
+			curAnimText.text = '現在のアニメーション: $curAnim / $maxAnims\n(WもしくはSで変更)';
+			curFrameText.text = 'Force Frame を無効\n(QもしくはEで変更)';
 
 			for (i in 0...maxNotes)
 			{
@@ -380,7 +382,7 @@ class NoteSplashDebugState extends MusicBeatState
 		}
 		else
 		{
-			curAnimText.text = 'INVALID ANIMATION NAME';
+			curAnimText.text = '無効なアニメーション名です';
 			curFrameText.text = '';
 		}
 		updateOffsetText();

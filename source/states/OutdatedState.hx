@@ -13,14 +13,14 @@ class OutdatedState extends MusicBeatState
 		add(bg);
 
 		warnText = new FlxText(0, 0, FlxG.width,
-			"Sup bro, looks like you're running an   \n
-			outdated version of Psych Engine (" + MainMenuState.psychEngineVersion + "),\n
-			please update to " + TitleState.updateVersion + "!\n
-			Press ESCAPE to proceed anyway.\n
+			"Hey yo お前、今使ってるエンジンの\n
+			バージョンは (" + MainMenuState.psychEngineVersion + "),だが、アップデートが来たようだ、\n
+			" + TitleState.updateVersion + "にアップデートしてくれ!\n
+			Escで非表示\n
 			\n
-			Thank you for using the Engine!",
+			PE-JPを使ってくれてありがとう！",
 			32);
-		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
+		warnText.setFormat(Paths.font('vcr.ttf'), 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
 		add(warnText);
 	}
@@ -30,7 +30,7 @@ class OutdatedState extends MusicBeatState
 		if(!leftState) {
 			if (controls.ACCEPT) {
 				leftState = true;
-				CoolUtil.browserLoad("https://github.com/ShadowMario/FNF-PsychEngine/releases");
+				CoolUtil.browserLoad("https://github.com/Shun-Yukkuri/FNF-PsychEngine-JP/releases");
 			}
 			else if(controls.BACK) {
 				leftState = true;

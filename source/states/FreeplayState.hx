@@ -5,6 +5,7 @@ import backend.Highscore;
 import backend.Song;
 
 import lime.utils.Assets;
+import openfl.Lib;
 import openfl.utils.Assets as OpenFlAssets;
 
 import objects.HealthIcon;
@@ -58,7 +59,8 @@ class FreeplayState extends MusicBeatState
 
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("FREE PLAY", null);
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - FREE PLAY"
 		#end
 
 		for (i in 0...WeekData.weeksList.length) {
@@ -163,10 +165,10 @@ class FreeplayState extends MusicBeatState
 		add(textBG);
 
 		#if PRELOAD_ALL
-		var leText:String = "Press SPACE to listen to the Song / Press CTRL to open the Gameplay Changers Menu / Press RESET to Reset your Score and Accuracy.";
+		var leText:String = "Spaceで曲を聴けます。 / Ctrlでゲームプレイに関する設定ができます。 / RESETに設定したキーでベストスコアを削除できます。";
 		var size:Int = 16;
 		#else
-		var leText:String = "Press CTRL to open the Gameplay Changers Menu / Press RESET to Reset your Score and Accuracy.";
+		var leText:String = "Ctrlでゲームプレイに関する設定ができます。 / RESETに設定したキーでベストスコアを削除できます。";
 		var size:Int = 18;
 		#end
 		var text:FlxText = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, size);
@@ -236,7 +238,7 @@ class FreeplayState extends MusicBeatState
 			ratingSplit[1] += '0';
 		}
 
-		scoreText.text = 'PERSONAL BEST: ' + lerpScore + ' (' + ratingSplit.join('.') + '%)';
+		scoreText.text = 'ベストスコア: ' + lerpScore + ' (' + ratingSplit.join('.') + '%)';
 		positionHighscore();
 
 		var shiftMult:Int = 1;
@@ -368,8 +370,8 @@ class FreeplayState extends MusicBeatState
 				trace('ERROR! $e');
 
 				var errorStr:String = e.toString();
-				if(errorStr.startsWith('[file_contents,assets/data/')) errorStr = 'Missing file: ' + errorStr.substring(27, errorStr.length-1); //Missing chart
-				missingText.text = 'ERROR WHILE LOADING CHART:\n$errorStr';
+				if(errorStr.startsWith('[file_contents,assets/data/')) errorStr = 'ファイルが見つかりません: ' + errorStr.substring(27, errorStr.length-1); //Missing chart
+				missingText.text = 'チャート読み込み中のエラー:\n$errorStr';
 				missingText.screenCenter(Y);
 				missingText.visible = true;
 				missingTextBG.visible = true;
@@ -386,6 +388,7 @@ class FreeplayState extends MusicBeatState
 			destroyFreeplayVocals();
 			#if MODS_ALLOWED
 			DiscordClient.loadModRPC();
+			Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - FREE PLAY - Selecting to:" + songs[curSelected].songName + "[" + curDifficulty "]";
 			#end
 		}
 		else if(controls.RESET)

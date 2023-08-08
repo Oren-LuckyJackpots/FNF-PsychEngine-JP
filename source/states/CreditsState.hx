@@ -5,6 +5,7 @@ import sys.FileSystem;
 import sys.io.File;
 #end
 
+import openfl.Lib;
 import objects.AttachedSprite;
 
 class CreditsState extends MusicBeatState
@@ -27,7 +28,8 @@ class CreditsState extends MusicBeatState
 	{
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("Credits", null);
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Credits"
 		#end
 
 		persistentUpdate = true;
@@ -44,6 +46,13 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var defaultList:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
+			['Psych Engine-JP Dev'],
+			['Shundesu',		    'shundesu',		    '開発リーダー',								                     'https://twitter.com/Shun_Yoro_',	     '444444'],
+			[''],
+			['JPsych Engine Dev'],
+			['warabi-mt',		    'warabi',		    'JPsych Engine 制作者',								            'https://twitter.com/warabi-mt17',	     'F4A460'],
+			['KuroGamiZERO',		'KRGMZERO',			'Jpsych Engine 制作協力者',							             'https://kurokamizero.jimdofree.com/',	 '555555'],
+			[''],
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],
 			['Riveren',				'riveren',			'Main Artist/Animator of Psych Engine',							'https://twitter.com/riverennn',		'B42F71'],

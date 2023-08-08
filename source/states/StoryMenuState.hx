@@ -10,6 +10,8 @@ import flixel.graphics.FlxGraphic;
 import objects.MenuItem;
 import objects.MenuCharacter;
 
+import openfl.Lib;
+
 import substates.GameplayChangersSubstate;
 import substates.ResetScoreSubState;
 
@@ -81,7 +83,8 @@ class StoryMenuState extends MusicBeatState
 
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("Story Menu", null);
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Story Menu";
 		#end
 
 		var num:Int = 0;
