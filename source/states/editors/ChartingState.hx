@@ -83,7 +83,12 @@ class ChartingState extends MusicBeatState
 		['Change Character', "Value 1: 変えるキャラクター (Dad, BF, GF)\nValue 2: 新しく出現させるキャラクターの名前"],
 		['Change Scroll Speed', "Value 1: スクロール速度倍率(デフォルトは1)\nValue 2: フルチェンジにかかる時間(秒)。"],
 		['Set Property', "Value 1: 値の名前\nValue 2: 値"],
-		['Play Sound', "Value 1: ファイル名\nValue 2: 音量(デフォルトは1)\n範囲は0～1"]
+		['Play Sound', "Value 1: ファイル名\nValue 2: 音量(デフォルトは1)\n範囲は0～1"],
+		['Enemy HUD Shake', "イベントを有効にするには、曲の最初に設定します。\nその曲全体で有効になります。"],
+		['HUD Transparency', "これは、Value1に対応する数値を入れることで機能します。\nただしスコアテキストとヘルスバーだけです。\n[0] 無効\n[1] 半透明\n[2] 透明"],
+		['HUD Truning', 'HUDを180度回転させます。\n有効にするには Value1 に 1 を入れます。\n元に戻すには Value1 を 0 にして下さい。'],
+		['InstaKill on Miss', 'value1に1を入れると有効になり、0を入れると無効になります。'],
+		['Note Move', "Value 1\n[0] リセット [1] ミドルスクロール [2] ノート位置入れ替え\n[3]音符の融合と対向音符の半透明化\n[4]太鼓スタイル [5]ノート位置入れ替え\nValue 1 = 5の場合 Value 2\n[1]すべての音符の位置が入れ替わる\n[2] 左右の音符の位置の反転\n[3] 音符の上下位置の反転\n[4] カオス"]
 	];
 
 	var _file:FileReference;
