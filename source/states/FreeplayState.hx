@@ -60,7 +60,7 @@ class FreeplayState extends MusicBeatState
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("FREE PLAY", null);
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - FREE PLAY"
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - FREE PLAY";
 		#end
 
 		for (i in 0...WeekData.weeksList.length) {
@@ -388,14 +388,14 @@ class FreeplayState extends MusicBeatState
 			destroyFreeplayVocals();
 			#if MODS_ALLOWED
 			DiscordClient.loadModRPC();
-			Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - FREE PLAY - Selecting to:" + songs[curSelected].songName + "[" + curDifficulty "]";
+			Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - FREE PLAY - Selecting to:" + songs[curSelected].songName + "[" + curDifficulty + "]";
 			#end
 		}
 		else if(controls.RESET)
 		{
 			persistentUpdate = false;
 			openSubState(new ResetScoreSubState(songs[curSelected].songName, curDifficulty, songs[curSelected].songCharacter));
-			FlxG.sound.play(Paths.sound('scrollMenu'));
+			FlxG.sound.play(Paths.sound('scrollM;enu'));
 		}
 
 		updateTexts(elapsed);

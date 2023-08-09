@@ -37,7 +37,7 @@ class MasterEditorMenu extends MusicBeatState
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Editors Main Menu", null);
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Main Editor Menu"
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Main Editor Menu";
 		#end
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));

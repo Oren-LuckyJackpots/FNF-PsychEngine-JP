@@ -71,24 +71,19 @@ class ChartingState extends MusicBeatState
 		['Dadbattle Spotlight', "Dad Battleで使われます。,\nValue 1: 0/1 = ON/OFF,\n2 = Target Dad\n3 = Target BF"],
 		['Hey!', "\"Hey!\"アニメーションを再生します。,\nValue 1: BF = Boyfriendのみ, GF = Girlfriendのみ,\nSomething else = 両方\nValue 2: カスタムアニメーションの継続時間,\n何も入力しない場合0.6秒です。"],
 		['Set GF Speed', "GFのアニメーションスピードを設定します。,\nValue 1: 1 = 普通のスピード,\n2 = 2分の1のスピード, 4 = 4分の1のスピード.\nFreshの冒頭で使われます。\n\n警告 値は必ず整数で！"],
-		['Philly Glow', "Week 3で使われます。\nValue 1: 0/1/2 = OFF/ON/リセット グラデーション\n \他のWeekにはもう使いません。"],
+		['Philly Glow', "Week 3で使われます。\nValue 1: 0/1/2 = OFF/ON/リセット グラデーション\n他のWeekにはもう使いません。"],
 		['Kill Henchmen', "For Mom's songs, don't use this please, i love them :("],
 		['Add Camera Zoom', "M.I.L.FのHard難易度限定で使われます。\nValue 1: カメラズーム倍率 (デフォルト: 0.015)\nValue 2: UIズーム倍率 (デフォルト: 0.03)\n何も入れない場合デフォルトの値が使用されます。"],
 		['BG Freaks Expression', "schoolステージでしか使われないでしょう！"],
 		['Trigger BG Ghouls', "schoolEvilステージでしか使われないでしょう！"],
-		['Play Animation', "キャラクターに設定されているアニメーションを再生します。,\アニメーションが終わると、,\nアイドルアニメーションに戻ります。\n\nValue 1: アニメーションの名前.\nValue 2: キャラクター (Dad, BF, GF)"],
+		['Play Animation', "キャラクターに設定されているアニメーションを再生します。,\nアニメーションが終わると、,\nアイドルアニメーションに戻ります。\n\nValue 1: アニメーションの名前.\nValue 2: キャラクター (Dad, BF, GF)"],
 		['Camera Follow Pos', "Value 1: X\nValue 2: Y\n\nカメラはフォローポイントを変更しない\nこれを使ってから、それを取り戻すために\n通常値に設定する場合は、両方の値を空白にする。"],
 		['Alt Idle Animation', "アイドルアニメーションの名前の後に、指定したサフィックスを設定する。\n設定すれば、これを使用して「idle-alt」をトリガーすることができる。\nValue 2 -alt\n\nValue 1: 設定する文字 (Dad, BF or GF)\nValue 2: 新しいサフィックス（無効にする場合は空白のままにする）"],
 		['Screen Shake', "Value 1: カメラの揺れ具合\nValue 2: HUDの揺れ具合\n\nどの値も下の例のように機能します。\"1, 0.05\".\n最初の数字(1)は持続時間。2番目の数字(0.05)は強度。"],
 		['Change Character', "Value 1: 変えるキャラクター (Dad, BF, GF)\nValue 2: 新しく出現させるキャラクターの名前"],
 		['Change Scroll Speed', "Value 1: スクロール速度倍率(デフォルトは1)\nValue 2: フルチェンジにかかる時間(秒)。"],
 		['Set Property', "Value 1: 値の名前\nValue 2: 値"],
-		['Play Sound', "Value 1: ファイル名\nValue 2: 音量(デフォルトは1)\n範囲は0～1"],
-		['Enemy HUD Shake', "イベントを有効にするには、曲の最初に設定します。\nその曲全体で有効になります。"],
-		['HUD Transparency', "これは、Value1に対応する数値を入れることで機能します。\nただしスコアテキストとヘルスバーだけです。\n[0] 無効\n[1] 半透明\n[2] 透明"],
-		['HUD Truning', 'HUDを180度回転させます。\n有効にするには Value1 に 1 を入れます。\n元に戻すには Value1 を 0 にして下さい。'],
-		['InstaKill on Miss', 'value1に1を入れると有効になり、0を入れると無効になります。'],
-		['Note Move', "Value 1\n[0] リセット [1] ミドルスクロール [2] ノート位置入れ替え\n[3]音符の融合と対向音符の半透明化\n[4]太鼓スタイル [5]ノート位置入れ替え\nValue 1 = 5の場合 Value 2\n[1]すべての音符の位置が入れ替わる\n[2] 左右の音符の位置の反転\n[3] 音符の上下位置の反転\n[4] カオス"]
+		['Play Sound', "Value 1: ファイル名\nValue 2: 音量(デフォルトは1)\n範囲は0～1"]
 	];
 
 	var _file:FileReference;

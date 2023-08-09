@@ -602,7 +602,7 @@ class CharacterEditorState extends MusicBeatState
 		animationNameInputText = new FlxUIInputText(animationInputText.x, animationInputText.y + 35, 150, '', 8);
 		animationIndicesInputText = new FlxUIInputText(animationNameInputText.x, animationNameInputText.y + 40, 250, '', 8);
 		animationNameFramerate = new FlxUINumericStepper(animationInputText.x + 170, animationInputText.y, 1, 24, 0, 240, 0);
-		animationLoopCheckBox = new FlxUICheckBox(animationNameInputText.x + 170, animationNameInputText.y - 1, null, null, "Loopループさせますか？" 100);
+		animationLoopCheckBox = new FlxUICheckBox(animationNameInputText.x + 170, animationNameInputText.y - 1, null, null, "ループさせますか？", 100);
 
 		animationDropDown = new FlxUIDropDownMenu(15, animationInputText.y - 55, FlxUIDropDownMenu.makeStrIdLabelArray([''], true), function(pressed:String) {
 			var selectedAnimation:Int = Std.parseInt(pressed);
@@ -1061,7 +1061,7 @@ class CharacterEditorState extends MusicBeatState
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("CHARACTER EDITOR", "編集中: " + daAnim, leHealthIcon.getCharacter());
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + state.MainMenuState.psychEngineJPVersion + " - CHARACTER EDITOR"
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - CHARACTER EDITOR";
 		#end
 	}
 

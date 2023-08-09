@@ -10,6 +10,8 @@ import flixel.effects.FlxFlicker;
 import flixel.input.keyboard.FlxKey;
 import lime.app.Application;
 
+import openfl.Lib;
+
 import objects.AchievementPopup;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;

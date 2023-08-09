@@ -126,7 +126,7 @@ class NoteSplashDebugState extends MusicBeatState
 		changeSelection();
 		super.create();
 		FlxG.mouse.visible = true;
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - NOTE SPLASH DEBUG"
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - NOTE SPLASH DEBUG";
 	}
 
 	var curAnim:Int = 1;

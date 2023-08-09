@@ -5,6 +5,7 @@ import backend.Mods;
 
 import flixel.ui.FlxButton;
 import flixel.FlxBasic;
+import openfl.Lib;
 import openfl.display.BitmapData;
 import flash.geom.Rectangle;
 import lime.utils.Assets;
@@ -62,7 +63,7 @@ class ModsMenuState extends MusicBeatState
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Mods Menu", null);
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Mods Menu"
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Mods Menu";
 		#end
 
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));

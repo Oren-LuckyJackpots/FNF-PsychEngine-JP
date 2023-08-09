@@ -29,7 +29,7 @@ class CreditsState extends MusicBeatState
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Credits", null);
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Credits"
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Credits";
 		#end
 
 		persistentUpdate = true;
@@ -51,7 +51,7 @@ class CreditsState extends MusicBeatState
 			[''],
 			['JPsych Engine Dev'],
 			['warabi-mt',		    'warabi',		    'JPsych Engine 制作者',								            'https://twitter.com/warabi-mt17',	     'F4A460'],
-			['KuroGamiZERO',		'KRGMZERO',			'Jpsych Engine 制作協力者',							             'https://kurokamizero.jimdofree.com/',	 '555555'],
+			['KuroGamiZERO',		'KRGMZERO',			'JPsych Engine 制作協力者',							            'https://kurokamizero.jimdofree.com/',	 '555555'],
 			[''],
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],
