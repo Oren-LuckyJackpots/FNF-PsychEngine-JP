@@ -293,11 +293,11 @@ class ControlsSubState extends MusicBeatSubstate
 					FlxTween.tween(bindingBlack, {alpha: 0.6}, 0.35, {ease: FlxEase.linear});
 					add(bindingBlack);
 
-					bindingText = new Alphabet(FlxG.width / 2, 160, "Rebinding " + options[curOptions[curSelected]][3], false);
+					bindingText = new FlxText(FlxG.width / 2, 160, options[curOptions[curSelected]][3] + "に対応するキーを設定", false);
 					bindingText.alignment = CENTERED;
 					add(bindingText);
 					
-					bindingText2 = new Alphabet(FlxG.width / 2, 340, "Hold ESC to Cancel\nHold Backspace to Delete", true);
+					bindingText2 = new FlxText(FlxG.width / 2, 340, "Escでキャンセル\nBackspaceでキーを削除", true);
 					bindingText2.alignment = CENTERED;
 					add(bindingText2);
 

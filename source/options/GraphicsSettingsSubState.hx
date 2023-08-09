@@ -20,13 +20,13 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 
 		//I'd suggest using "Low Quality" as an example for making your own option since it is the simplest here
 		var option:Option = new Option('Low Quality', //Name
-			'If checked, disables some background details,\ndecreases loading times and improves performance.', //Description
+			'パフォーマンスが悪い場合、このチェックを入れると背景が軽いものに変更されますが、\nクオリティが低くなります。', //Description
 			'lowQuality', //Save data variable name
 			'bool'); //Variable type
 		addOption(option);
 
 		var option:Option = new Option('Anti-Aliasing',
-			'If unchecked, disables anti-aliasing, increases performance\nat the cost of sharper visuals.',
+			'画像の縁をきれいにします。\n右のBFで変化の様子を確認できます。',
 			'antialiasing',
 			'bool');
 		option.onChange = onChangeAntiAliasing; //Changing onChange is only needed if you want to make a special interaction after it changes the value
@@ -34,20 +34,20 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		antialiasingOption = optionsArray.length-1;
 
 		var option:Option = new Option('Shaders', //Name
-			"If unchecked, disables shaders.\nIt's used for some visual effects, and also CPU intensive for weaker PCs.", //Description
+			"いくつかのPCはシェーダーをオフにするとよりよい体験が得られるかも知れません。", //Description
 			'shaders',
 			'bool');
 		addOption(option);
 
 		var option:Option = new Option('GPU Caching', //Name
-			"If checked, allows the GPU to be used for caching textures, decreasing RAM usage.\nDon't turn this on if you have a shitty Graphics Card.", //Description
+			"GPUキャッシュを利用するようにして、メモリ使用量を減らすことができます。\n但し、内蔵GPUを使っている人などはこのオプションをONにすると\nクラッシュすることがあります。", //Description
 			'cacheOnGPU',
 			'bool');
 		addOption(option);
 
 		#if !html5 //Apparently other framerates isn't correctly supported on Browser? Probably it has some V-Sync shit enabled by default, idk
 		var option:Option = new Option('Framerate',
-			"Pretty self explanatory, isn't it?",
+			"説明不要だろ、マイブラザー",
 			'framerate',
 			'int');
 		addOption(option);

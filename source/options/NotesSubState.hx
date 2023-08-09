@@ -143,7 +143,7 @@ class NotesSubState extends MusicBeatSubstate
 
 		var tipX = 20;
 		var tipY = 660;
-		var tip:FlxText = new FlxText(tipX, tipY, 0, "Press RELOAD to Reset the selected Note Part.", 16);
+		var tip:FlxText = new FlxText(tipX, tipY, 0, "RELOAD を押して選択したノーツパートをリセット", 16);
 		tip.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		tip.borderSize = 2;
 		add(tip);
@@ -167,7 +167,7 @@ class NotesSubState extends MusicBeatSubstate
 
 	function updateTip()
 	{
-		tipTxt.text = 'Hold ' + (!controls.controllerMode ? 'Shift' : 'Left Shoulder Button') + ' + Press RELOAD to fully reset the selected Note.';
+		tipTxt.text = 'Hold ' + (!controls.controllerMode ? 'Shift' : '左肩のボタン') + ' + RELOADを押して、選択したノーツを完全にリセット';
 	}
 
 	var _storedColor:FlxColor;
