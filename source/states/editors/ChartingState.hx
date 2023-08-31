@@ -277,6 +277,8 @@ class ChartingState extends MusicBeatState
 		if(curSec >= _song.notes.length) curSec = _song.notes.length - 1;
 
 		bpmTxt = new FlxText(1000, 50, 0, "", 16);
+		bpmTxt.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
 		bpmTxt.scrollFactor.set();
 		add(bpmTxt);
 
@@ -374,6 +376,8 @@ class ChartingState extends MusicBeatState
 		lastSong = currentSongName;
 
 		zoomTxt = new FlxText(10, 10, 0, "ズーム: 1 / 1", 16);
+		zoomTxt.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
 		zoomTxt.scrollFactor.set();
 		add(zoomTxt);
 
@@ -584,6 +588,8 @@ class ChartingState extends MusicBeatState
 		blockPressWhileScrolling.push(stageDropDown);
 
 		var tab_group_song = new FlxUI(null, UI_box);
+		tab_group_song.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
 		tab_group_song.name = "Song";
 		tab_group_song.add(UI_songTitle);
 
@@ -628,18 +634,26 @@ class ChartingState extends MusicBeatState
 	function addSectionUI():Void
 	{
 		var tab_group_section = new FlxUI(null, UI_box);
+		tab_group_section.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
 		tab_group_section.name = 'Section';
 
 		check_mustHitSection = new FlxUICheckBox(10, 15, null, null, "ノーツを打つプレイヤーを変更", 100);
+		check_mustHitSection.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
 		check_mustHitSection.name = 'check_mustHit';
 		check_mustHitSection.checked = _song.notes[curSec].mustHitSection;
 
 		check_gfSection = new FlxUICheckBox(10, check_mustHitSection.y + 22, null, null, "GFが歌う", 100);
+		check_gfSection.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
 		check_gfSection.name = 'check_gf';
 		check_gfSection.checked = _song.notes[curSec].gfSection;
 		// _song.needsVoices = check_mustHit.checked;
 
 		check_altAnim = new FlxUICheckBox(check_gfSection.x + 120, check_gfSection.y, null, null, "Alt Animation", 100);
+		check_altAnim.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
 		check_altAnim.checked = _song.notes[curSec].altAnim;
 
 		stepperBeats = new FlxUINumericStepper(10, 100, 1, 4, 1, 7, 2);
@@ -649,6 +663,8 @@ class ChartingState extends MusicBeatState
 		check_altAnim.name = 'check_altAnim';
 
 		check_changeBPM = new FlxUICheckBox(10, stepperBeats.y + 30, null, null, 'BPMを変更', 100);
+		check_changeBPM.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
 		check_changeBPM.checked = _song.notes[curSec].changeBPM;
 		check_changeBPM.name = 'check_changeBPM';
 
@@ -953,6 +969,9 @@ class ChartingState extends MusicBeatState
 		tab_group_note.add(strumTimeInputText);
 		tab_group_note.add(noteTypeDropDown);
 
+		tab_group_note.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
+
 		UI_box.addGroup(tab_group_note);
 	}
 
@@ -962,7 +981,9 @@ class ChartingState extends MusicBeatState
 	function addEventsUI():Void
 	{
 		var tab_group_event = new FlxUI(null, UI_box);
-		tab_group_event.name = 'Events';
+		tab_group_event.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
+		tab_group_event.name = 'イベント';
 
 		#if LUA_ALLOWED
 		var eventPushedMap:Map<String, Bool> = new Map<String, Bool>();
@@ -1002,6 +1023,8 @@ class ChartingState extends MusicBeatState
 		}
 
 		var text:FlxText = new FlxText(20, 30, 0, "イベント:");
+		text.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
 		tab_group_event.add(text);
 		eventDropDown = new FlxUIDropDownMenu(20, 50, FlxUIDropDownMenu.makeStrIdLabelArray(leEvents, true), function(pressed:String) {
 			var selectedEvent:Int = Std.parseInt(pressed);
@@ -1098,6 +1121,8 @@ class ChartingState extends MusicBeatState
 		tab_group_event.add(moveRightButton);
 
 		selectedEventText = new FlxText(addButton.x - 100, addButton.y + addButton.height + 6, (moveRightButton.x - addButton.x) + 186, 'Selected Event: None');
+		selectedEventText.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, /*LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
 		selectedEventText.alignment = CENTER;
 		tab_group_event.add(selectedEventText);
 
@@ -1304,6 +1329,10 @@ class ChartingState extends MusicBeatState
 		tab_group_chart.add(check_warnings);
 		tab_group_chart.add(playSoundBf);
 		tab_group_chart.add(playSoundDad);
+
+		tab_group_chart.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
+
 		UI_box.addGroup(tab_group_chart);
 	}
 
@@ -1316,7 +1345,9 @@ class ChartingState extends MusicBeatState
 	function addDataUI()
 	{
 		var tab_group_data = new FlxUI(null, UI_box);
-		tab_group_data.name = 'Data';
+		tab_group_data.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
+		tab_group_data.name = 'データ';
 
 		//
 		gameOverCharacterInputText = new FlxUIInputText(10, 25, 150, _song.gameOverChar != null ? _song.gameOverChar : '', 8);
@@ -1372,6 +1403,10 @@ class ChartingState extends MusicBeatState
 
 		tab_group_data.add(new FlxText(noteSkinInputText.x, noteSkinInputText.y - 15, 0, 'ノーツテクスチャ:'));
 		tab_group_data.add(new FlxText(noteSplashesInputText.x, noteSplashesInputText.y - 15, 0, 'ノーツスプラッシュテクスチャ:'));
+
+		tab_group_data.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, LEFT/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+			//tipText.borderSize = 2;
+
 		UI_box.addGroup(tab_group_data);
 	}
 
