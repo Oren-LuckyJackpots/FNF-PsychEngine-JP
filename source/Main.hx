@@ -25,7 +25,7 @@ import sys.io.Process;
 
 class Main extends Sprite
 {
-	public static var FONT_DEFAULT:String = Paths.font('system.ttf');
+	public static var FONT_DEFAULT:String = "Noto Sans JP SemiBold";
 	public static var FONT_DEBUGGER:String = "Monsterrat";
 
 	var game = {
@@ -148,7 +148,7 @@ class Main extends Sprite
 		dateNow = dateNow.replace(" ", "_");
 		dateNow = dateNow.replace(":", "'");
 
-		path = "./crash/" + "PsychEngine_" + dateNow + ".txt";
+		path = "./crash/" + "PsychEngineJP_クラッシュ_" + dateNow + ".txt";
 
 		for (stackItem in callStack)
 		{
@@ -161,7 +161,7 @@ class Main extends Sprite
 			}
 		}
 
-		errMsg += "\nUncaught Error: " + e.error + "\nPlease report this error to the GitHub page: https://github.com/ShadowMario/FNF-PsychEngine\n\n> Crash Handler written by: sqirra-rng";
+		errMsg += "\nUncaught Error: " + e.error + "\nこのエラーをGitHubで報告して下さい！: https://github.com/ShadowMario/FNF-PsychEngine\n\n> Crash Handler written by: sqirra-rng";
 
 		if (!FileSystem.exists("./crash/"))
 			FileSystem.createDirectory("./crash/");
