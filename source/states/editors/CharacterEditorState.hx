@@ -118,7 +118,7 @@ class CharacterEditorState extends MusicBeatState
 		dumbTexts.cameras = [camHUD];
 
 		textAnim = new FlxText(300, 16);
-		textAnim.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		textAnim.setFormat(Paths.font("VCR OSD Mono.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		textAnim.borderSize = 1;
 		textAnim.size = 32;
 		textAnim.scrollFactor.set();
@@ -132,19 +132,19 @@ class CharacterEditorState extends MusicBeatState
 		add(camFollow);
 
 		var tipTextArray:Array<String> = "E/Q - カメラズーム イン/アウト
-		\nR - カメラのズームをリセット
+		\nR - カメラズームをリセット
 		\nJKLI - カメラを動かす
-		\nW/S - アニメーションを 前へ/次へ
+		\nW/S - 前/次 のアニメーションへ
 		\nSpace - アニメーションを再生
-		\nArrow Keys - キャラクターの位置を調整
+		\nArrow Keys - それぞれのポーズの位置を調整
 		\nT - 現在の位置をリセット
-		\nShiftを押し続けながらすると数値が十倍動きます\n".split('\n');
+		\nShiftを押しながらすると10ずつ数値が変化します\n".split('\n');
 
 		for (i in 0...tipTextArray.length-1)
 		{
 			var tipText:FlxText = new FlxText(FlxG.width - 320, FlxG.height - 15 - 16 * (tipTextArray.length - i), 300, tipTextArray[i], 12);
 			tipText.cameras = [camHUD];
-			tipText.setFormat(null, 12, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE_FAST, FlxColor.BLACK);
+			tipText.setFormat(Paths.font('vcr.ttf'), 12, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE_FAST, FlxColor.BLACK);
 			tipText.scrollFactor.set();
 			tipText.borderSize = 1;
 			add(tipText);
@@ -399,9 +399,9 @@ class CharacterEditorState extends MusicBeatState
 	var charDropDown:FlxUIDropDownMenu;
 	function addSettingsUI() {
 		var tab_group = new FlxUI(null, UI_box);
-		tab_group.name = "Settings";
+		tab_group.name = "設定";
 
-		var check_player = new FlxUICheckBox(10, 60, null, null, "プレイヤーとしても使う", 100);
+		var check_player = new FlxUICheckBox(10, 60, null, null, "プレイヤーとする", 100);
 		check_player.checked = daAnim.startsWith('bf');
 		check_player.callback = function()
 		{
@@ -423,7 +423,7 @@ class CharacterEditorState extends MusicBeatState
 		charDropDown.selectedLabel = daAnim;
 		reloadCharacterDropDown();
 
-		var reloadCharacter:FlxButton = new FlxButton(140, 20, "キャラを再読み込み", function()
+		var reloadCharacter:FlxButton = new FlxButton(140, 20, "JSONをリロード", function()
 		{
 			loadChar(!check_player.checked);
 			reloadCharacterDropDown();
@@ -499,7 +499,7 @@ class CharacterEditorState extends MusicBeatState
 		tab_group.name = "Character";
 
 		imageInputText = new FlxUIInputText(15, 30, 200, 'characters/BOYFRIEND', 8);
-		var reloadImage:FlxButton = new FlxButton(imageInputText.x + 210, imageInputText.y - 3, "画像を再読み込み", function()
+		var reloadImage:FlxButton = new FlxButton(imageInputText.x + 210, imageInputText.y - 3, "スプライトを再読み込み", function()
 		{
 			char.imageFile = imageInputText.text;
 			reloadCharacterImage();
@@ -508,7 +508,7 @@ class CharacterEditorState extends MusicBeatState
 			}
 		});
 
-		var decideIconColor:FlxButton = new FlxButton(reloadImage.x, reloadImage.y + 30, "アイコンの色を取得", function()
+		var decideIconColor:FlxButton = new FlxButton(reloadImage.x, reloadImage.y + 30, "アイコン色を取得", function()
 			{
 				var coolColor = FlxColor.fromInt(CoolUtil.dominantColor(leHealthIcon));
 				healthColorStepperR.value = coolColor.red;
@@ -553,7 +553,7 @@ class CharacterEditorState extends MusicBeatState
 		positionCameraXStepper = new FlxUINumericStepper(positionXStepper.x, positionXStepper.y + 40, 10, char.cameraPosition[0], -9000, 9000, 0);
 		positionCameraYStepper = new FlxUINumericStepper(positionYStepper.x, positionYStepper.y + 40, 10, char.cameraPosition[1], -9000, 9000, 0);
 
-		var saveCharacterButton:FlxButton = new FlxButton(reloadImage.x, noAntialiasingCheckBox.y + 40, "キャラクターを保存", function() {
+		var saveCharacterButton:FlxButton = new FlxButton(reloadImage.x, noAntialiasingCheckBox.y + 40, "キャラを保存", function() {
 			saveCharacter();
 		});
 
@@ -561,13 +561,13 @@ class CharacterEditorState extends MusicBeatState
 		healthColorStepperG = new FlxUINumericStepper(singDurationStepper.x + 65, saveCharacterButton.y, 20, char.healthColorArray[1], 0, 255, 0);
 		healthColorStepperB = new FlxUINumericStepper(singDurationStepper.x + 130, saveCharacterButton.y, 20, char.healthColorArray[2], 0, 255, 0);
 
-		tab_group.add(new FlxText(15, imageInputText.y - 18, 0, '画像ファイルの名前:'));
-		tab_group.add(new FlxText(15, healthIconInputText.y - 18, 0, 'アイコンファイルの名前:'));
+		tab_group.add(new FlxText(15, imageInputText.y - 18, 0, 'スプライトファイル名:'));
+		tab_group.add(new FlxText(15, healthIconInputText.y - 18, 0, 'アイコンファイル名:'));
 		tab_group.add(new FlxText(15, singDurationStepper.y - 18, 0, '歌うアニメーションの長さ:'));
 		tab_group.add(new FlxText(15, scaleStepper.y - 18, 0, '大きさ:'));
-		tab_group.add(new FlxText(positionXStepper.x, positionXStepper.y - 18, 0, 'キャラ X/Y:'));
-		tab_group.add(new FlxText(positionCameraXStepper.x, positionCameraXStepper.y - 18, 0, 'カメラ X/Y:'));
-		tab_group.add(new FlxText(healthColorStepperR.x, healthColorStepperR.y - 18, 0, 'アイコンカラー R/G/B:'));
+		tab_group.add(new FlxText(positionXStepper.x, positionXStepper.y - 18, 0, 'キャラの位置 X/Y:'));
+		tab_group.add(new FlxText(positionCameraXStepper.x, positionCameraXStepper.y - 18, 0, 'カメラの位置 X/Y:'));
+		tab_group.add(new FlxText(healthColorStepperR.x, healthColorStepperR.y - 18, 0, 'ヘルスバーの色 R/G/B:'));
 		tab_group.add(imageInputText);
 		tab_group.add(reloadImage);
 		tab_group.add(decideIconColor);
@@ -596,13 +596,13 @@ class CharacterEditorState extends MusicBeatState
 	var animationLoopCheckBox:FlxUICheckBox;
 	function addAnimationsUI() {
 		var tab_group = new FlxUI(null, UI_box);
-		tab_group.name = "Animations";
+		tab_group.name = "アニメーション";
 
 		animationInputText = new FlxUIInputText(15, 85, 80, '', 8);
 		animationNameInputText = new FlxUIInputText(animationInputText.x, animationInputText.y + 35, 150, '', 8);
 		animationIndicesInputText = new FlxUIInputText(animationNameInputText.x, animationNameInputText.y + 40, 250, '', 8);
 		animationNameFramerate = new FlxUINumericStepper(animationInputText.x + 170, animationInputText.y, 1, 24, 0, 240, 0);
-		animationLoopCheckBox = new FlxUICheckBox(animationNameInputText.x + 170, animationNameInputText.y - 1, null, null, "ループさせますか？", 100);
+		animationLoopCheckBox = new FlxUICheckBox(animationNameInputText.x + 170, animationNameInputText.y - 1, null, null, "ループする", 100);
 
 		animationDropDown = new FlxUIDropDownMenu(15, animationInputText.y - 55, FlxUIDropDownMenu.makeStrIdLabelArray([''], true), function(pressed:String) {
 			var selectedAnimation:Int = Std.parseInt(pressed);
@@ -694,7 +694,7 @@ class CharacterEditorState extends MusicBeatState
 
 			reloadAnimationDropDown();
 			genBoyOffsets();
-			trace('追加/更新されたアニメーション: ' + animationInputText.text);
+			trace('Added/Updated animation: ' + animationInputText.text);
 		});
 
 		var removeButton:FlxButton = new FlxButton(180, animationIndicesInputText.y + 30, "削除", function() {
@@ -723,11 +723,11 @@ class CharacterEditorState extends MusicBeatState
 		});
 
 		tab_group.add(new FlxText(animationDropDown.x, animationDropDown.y - 18, 0, 'アニメーション:'));
-		tab_group.add(new FlxText(ghostDropDown.x, ghostDropDown.y - 18, 0, 'アニメーションの残像:'));
-		tab_group.add(new FlxText(animationInputText.x, animationInputText.y - 18, 0, 'アニメーションの名前:'));
-		tab_group.add(new FlxText(animationNameFramerate.x, animationNameFramerate.y - 18, 0, 'FPS:'));
-		tab_group.add(new FlxText(animationNameInputText.x, animationNameInputText.y - 18, 0, '.XML/.TXTでもアニメーションの名前:'));
-		tab_group.add(new FlxText(animationIndicesInputText.x, animationIndicesInputText.y - 18, 0, '上級 - アニメーション指標:'));
+		tab_group.add(new FlxText(ghostDropDown.x, ghostDropDown.y - 18, 0, '残像:'));
+		tab_group.add(new FlxText(animationInputText.x, animationInputText.y - 18, 0, 'JSON内でのアニメーションの名前:'));
+		tab_group.add(new FlxText(animationNameFramerate.x, animationNameFramerate.y - 18, 0, 'フレームレート:'));
+		tab_group.add(new FlxText(animationNameInputText.x, animationNameInputText.y - 18, 0, '.XML/.TXT 中でのアニメーションの名前:'));
+		tab_group.add(new FlxText(animationIndicesInputText.x, animationIndicesInputText.y - 18, 0, 'アニメーション指標(上級者向け):'));
 
 		tab_group.add(animationInputText);
 		tab_group.add(animationNameInputText);
@@ -881,7 +881,7 @@ class CharacterEditorState extends MusicBeatState
 
 		textAnim.visible = true;
 		if(dumbTexts.length < 1) {
-			var text:FlxText = new FlxText(10, 38, 0, "エラー！アニメーションが見つかりません！", 15);
+			var text:FlxText = new FlxText(10, 38, 0, "アニメーションが見つかりません！", 15);
 			text.scrollFactor.set();
 			text.borderSize = 1;
 			dumbTexts.add(text);
@@ -983,7 +983,7 @@ class CharacterEditorState extends MusicBeatState
 			anims.push(anim.anim);
 			ghostAnims.push(anim.anim);
 		}
-		if(anims.length < 1) anims.push('アニメーションなし'); //Prevents crash
+		if(anims.length < 1) anims.push('NO ANIMATIONS'); //Prevents crash
 
 		animationDropDown.setData(FlxUIDropDownMenu.makeStrIdLabelArray(anims, true));
 		ghostDropDown.setData(FlxUIDropDownMenu.makeStrIdLabelArray(ghostAnims, true));
@@ -1060,8 +1060,8 @@ class CharacterEditorState extends MusicBeatState
 	function updatePresence() {
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("CHARACTER EDITOR", "編集中: " + daAnim, leHealthIcon.getCharacter());
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - CHARACTER EDITOR";
+		DiscordClient.changePresence("キャラクターエディター", "編集中のキャラクター: " + daAnim, leHealthIcon.getCharacter());
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Character Editor";
 		#end
 	}
 
@@ -1221,7 +1221,7 @@ class CharacterEditorState extends MusicBeatState
 		_file.removeEventListener(Event.CANCEL, onSaveCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 		_file = null;
-		FlxG.log.notice("セーブが正常に完了しました。");
+		FlxG.log.notice("Successfully saved file.");
 	}
 
 	/**
@@ -1244,7 +1244,7 @@ class CharacterEditorState extends MusicBeatState
 		_file.removeEventListener(Event.CANCEL, onSaveCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 		_file = null;
-		FlxG.log.error("セーブに問題があります。");
+		FlxG.log.error("Problem saving file");
 	}
 
 	function saveCharacter() {

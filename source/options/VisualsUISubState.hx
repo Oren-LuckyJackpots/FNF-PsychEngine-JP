@@ -13,7 +13,7 @@ class VisualsUISubState extends BaseOptionsMenu
 	public function new()
 	{
 		title = 'Visuals and UI';
-		rpcTitle = 'Visuals & UI Settings Menu'; //for Discord Rich Presence
+		rpcTitle = 'VisualやUIに関する設定'; //for Discord Rich Presence
 
 		// for note skins
 		notes = new FlxTypedGroup<StrumNote>();

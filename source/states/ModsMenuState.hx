@@ -73,7 +73,7 @@ class ModsMenuState extends MusicBeatState
 
 		noModsTxt = new FlxText(0, 0, FlxG.width, "MODが見つかりません。\nMODをインストールしてから見てみて下さい。", 48);
 		if(FlxG.random.bool(0.1)) noModsTxt.text += '\nBITCH LOL'; //meanie
-		noModsTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		noModsTxt.setFormat(Paths.font("system.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		noModsTxt.scrollFactor.set();
 		noModsTxt.borderSize = 2;
 		add(noModsTxt);
@@ -110,7 +110,7 @@ class ModsMenuState extends MusicBeatState
 		buttonsArray.push(buttonToggle);
 		visibleWhenHasMods.push(buttonToggle);
 
-		buttonToggle.label.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.WHITE, CENTER);
+		buttonToggle.label.setFormat(Paths.font("VCR OSD Mono.ttf"), 24, FlxColor.WHITE, CENTER);
 		setAllLabelsOffset(buttonToggle, -15, 10);
 		startX -= 70;
 
@@ -124,7 +124,7 @@ class ModsMenuState extends MusicBeatState
 		add(buttonUp);
 		buttonsArray.push(buttonUp);
 		visibleWhenHasMods.push(buttonUp);
-		buttonUp.label.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.BLACK, CENTER);
+		buttonUp.label.setFormat(Paths.font("VCR OSD Mono.ttf"), 24, FlxColor.BLACK, CENTER);
 		setAllLabelsOffset(buttonUp, -15, 10);
 		startX -= 70;
 
@@ -137,7 +137,7 @@ class ModsMenuState extends MusicBeatState
 		add(buttonDown);
 		buttonsArray.push(buttonDown);
 		visibleWhenHasMods.push(buttonDown);
-		buttonDown.label.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.BLACK, CENTER);
+		buttonDown.label.setFormat(Paths.font("VCR OSD Mono.ttf"), 24, FlxColor.BLACK, CENTER);
 		setAllLabelsOffset(buttonDown, -15, 10);
 
 		startX -= 100;
@@ -156,7 +156,7 @@ class ModsMenuState extends MusicBeatState
 		});
 		buttonTop.setGraphicSize(80, 50);
 		buttonTop.updateHitbox();
-		buttonTop.label.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.BLACK, CENTER);
+		buttonTop.label.setFormat(Paths.font("VCR OSD Mono.ttf"), 24, FlxColor.BLACK, CENTER);
 		setAllLabelsOffset(buttonTop, 0, 10);
 		add(buttonTop);
 		buttonsArray.push(buttonTop);
@@ -510,7 +510,7 @@ class ModsMenuState extends MusicBeatState
 				selector.sprTracker = mod.alphabet;
 				descriptionTxt.text = mod.description;
 				if (mod.restart){//finna make it to where if nothing changed then it won't reset
-					descriptionTxt.text += " (PE-JPの再起動が必要です！)";
+					descriptionTxt.text += "\n(PE-JPの再起動が必要です！)";
 				}
 
 				// correct layering
@@ -689,7 +689,7 @@ class ModMetadata
 				if(pack.description != 'Description')
 					this.description = pack.description;
 				else
-					this.description = "No description provided.";
+					this.description = "説明はないようです。";
 			}
 
 			if(pack.color != null)

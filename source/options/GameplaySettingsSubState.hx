@@ -5,7 +5,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 	public function new()
 	{
 		title = 'Gameplay Settings';
-		rpcTitle = 'Gameplay Settings Menu'; //for Discord Rich Presence
+		rpcTitle = 'ゲームプレイ設定'; //for Discord Rich Presence
 
 		//I'd suggest using "Downscroll" as an example for making your own option since it is the simplest here
 		var option:Option = new Option('Downscroll', //Name
@@ -46,7 +46,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Hitsound Volume',
-			'ノーツをヒットさせたときの音を調整します。',
+			'ノーツのヒット時の音量を調整します。',
 			'hitsoundVolume',
 			'percent');
 		addOption(option);
@@ -58,7 +58,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		option.onChange = onChangeHitsoundVolume;
 
 		var option:Option = new Option('Rating Offset',
-			'Sick!!を打つタイミングが遅くなります。',
+			'Sick!!を打つタイミングを調整します。',
 			'ratingOffset',
 			'int');
 		option.displayFormat = '%vms';
@@ -68,7 +68,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Sick! Hit Window',
-			'Sick!!判定になる時間をミリ秒で調整します。',
+			'Sick!!判定になる時間をミリ秒単位で調整します。',
 			'sickWindow',
 			'int');
 		option.displayFormat = '%vms';
@@ -78,7 +78,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Good Hit Window',
-			'Good!判定になる時間をミリ秒で調整します。',
+			'Good!判定になる時間をミリ秒単位で調整します。',
 			'goodWindow',
 			'int');
 		option.displayFormat = '%vms';
@@ -88,7 +88,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Bad Hit Window',
-			'Bad判定になる時間をミリ秒で調整します。',
+			'Bad判定になる時間をミリ秒単位で調整します。',
 			'badWindow',
 			'int');
 		option.displayFormat = '%vms';
@@ -98,7 +98,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Safe Frames',
-			'ミスにならない範囲を調整します。',
+			'ミス判定にならない範囲を調整します。',
 			'safeFrames',
 			'float');
 		option.scrollSpeed = 5;

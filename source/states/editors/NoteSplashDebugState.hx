@@ -3,9 +3,9 @@ package states.editors;
 import objects.Note;
 import objects.StrumNote;
 import objects.NoteSplash;
+import openfl.Lib;
 import flixel.addons.ui.FlxInputText;
 import flixel.addons.ui.FlxUINumericStepper;
-import openfl.Lib;
 
 class NoteSplashDebugState extends MusicBeatState
 {
@@ -30,6 +30,8 @@ class NoteSplashDebugState extends MusicBeatState
 
 	override function create()
 	{
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Note Splash Debug";
+		
 		FlxG.camera.bgColor = FlxColor.fromHSL(0, 0, 0.5);
 		selection = new FlxSprite(0, 270).makeGraphic(150, 150, FlxColor.BLACK);
 		selection.alpha = 0.4;
@@ -82,7 +84,7 @@ class NoteSplashDebugState extends MusicBeatState
 		};
 		add(nameInputText);
 		
-		add(new FlxText(txtx, txty - 84, 0, '最小/最大 FPS:', 16));
+		add(new FlxText(txtx, txty - 84, 0, '最小/最大 フレームレート:', 16));
 		stepperMinFps = new FlxUINumericStepper(txtx, txty - 60, 1, 22, 1, 60, 0);
 		stepperMinFps.name = 'min_fps';
 		add(stepperMinFps);
@@ -94,17 +96,17 @@ class NoteSplashDebugState extends MusicBeatState
 
 		//
 		offsetsText = new FlxText(300, 150, 680, '', 16);
-		offsetsText.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		offsetsText.setFormat(Paths.font("VCR OSD Mono.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		offsetsText.scrollFactor.set();
 		add(offsetsText);
 
 		curFrameText = new FlxText(300, 100, 680, '', 16);
-		curFrameText.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		curFrameText.setFormat(Paths.font("VCR OSD Mono.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		curFrameText.scrollFactor.set();
 		add(curFrameText);
 
 		curAnimText = new FlxText(300, 50, 680, '', 16);
-		curAnimText.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		curAnimText.setFormat(Paths.font("VCR OSD Mono.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		curAnimText.scrollFactor.set();
 		add(curAnimText);
 
@@ -113,12 +115,12 @@ class NoteSplashDebugState extends MusicBeatState
 			ENTERを2回押し、読み込んだノートスプラッシュPNGのフォルダに保存\n
 			A/D ノーツを変更 - 矢印キーでオフセットを変更(Shiftを押しながらすると10倍)\n
 			Ctrl + C/V - コピー・ペースト", 16);
-		text.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		text.setFormat(Paths.font("system.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		text.scrollFactor.set();
 		add(text);
 
 		savedText = new FlxText(0, 340, FlxG.width, '', 24);
-		savedText.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		savedText.setFormat(Paths.font("system.ttf"), 24, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		savedText.scrollFactor.set();
 		add(savedText);
 
@@ -126,7 +128,6 @@ class NoteSplashDebugState extends MusicBeatState
 		changeSelection();
 		super.create();
 		FlxG.mouse.visible = true;
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - NOTE SPLASH DEBUG";
 	}
 
 	var curAnim:Int = 1;
@@ -209,7 +210,7 @@ class NoteSplashDebugState extends MusicBeatState
 
 		if(FlxG.keys.justPressed.ENTER)
 		{
-			savedText.text = 'ENTERでセーブ';
+			savedText.text = 'Enterを再度押してセーブ';
 			if(pressEnterToSave > 0) //save
 			{
 				saveFile();
@@ -242,7 +243,7 @@ class NoteSplashDebugState extends MusicBeatState
 			else if(forceFrame >= maxFrame) forceFrame = maxFrame - 1;
 			//trace('curFrame: $forceFrame');
 			
-			curFrameText.text = 'Force Frame: ${forceFrame+1} / $maxFrame\n(QもしくはEで変更)';
+			curFrameText.text = 'フレーム: ${forceFrame+1} / $maxFrame\n(QもしくはEで変更)';
 			splashes.forEachAlive(function(spr:FlxSprite) {
 				spr.animation.curAnim.paused = true;
 				spr.animation.curAnim.curFrame = forceFrame;
@@ -294,7 +295,7 @@ class NoteSplashDebugState extends MusicBeatState
 
 		var pathSplit:Array<String> = (Paths.getPath('images/$texturePath.png', IMAGE, true).split('.png')[0] + '.txt').split(':');
 		var path:String = pathSplit[pathSplit.length-1].trim();
-		savedText.text = 'セーブ先: $path';
+		savedText.text = '$path にセーブされました';
 		sys.io.File.saveContent(path, strToSave);
 
 		//trace(strToSave);
@@ -382,7 +383,7 @@ class NoteSplashDebugState extends MusicBeatState
 		}
 		else
 		{
-			curAnimText.text = '無効なアニメーション名です';
+			curAnimText.text = 'アニメーション名が無効';
 			curFrameText.text = '';
 		}
 		updateOffsetText();

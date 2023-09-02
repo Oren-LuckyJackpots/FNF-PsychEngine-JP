@@ -403,6 +403,10 @@ class PlayState extends MusicBeatState
 		add(dadGroup);
 		add(boyfriendGroup);
 
+		#if desktop
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - " + SONG.song;
+		#end
+
 		#if LUA_ALLOWED
 		luaDebugGroup = new FlxTypedGroup<DebugLuaText>();
 		luaDebugGroup.cameras = [camOther];
@@ -1131,12 +1135,12 @@ class PlayState extends MusicBeatState
 		if(totalPlayed != 0)
 		{
 			var percent:Float = CoolUtil.floorDecimal(ratingPercent * 100, 2);
-			str += ' ($percent%) - $ratingFC';
+			str += ' $percent% $ratingFC';
 		}
 
 		scoreTxt.text = 'スコア: ' + songScore
 		+ ' | ミス数: ' + songMisses
-		+ ' | 評価: ' + str;
+		+ ' | 精度: ';
 
 		if(ClientPrefs.data.scoreZoom && !miss && !cpuControlled)
 		{
@@ -1210,7 +1214,6 @@ class PlayState extends MusicBeatState
 		#if desktop
 		// Updating Discord Rich Presence (with Time Left)
 		DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter(), true, songLength);
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - " + SONG.song + " [" + storyDifficultyText + "]";
 		#end
 		setOnScripts('songLength', songLength);
 		callOnScripts('onSongStart');
@@ -1553,7 +1556,6 @@ class PlayState extends MusicBeatState
 	{
 		#if desktop
 		if (health > 0 && !paused) DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - " + SONG.song + " [" + storyDifficultyText + "]";
 		#end
 
 		super.onFocusLost();
@@ -1565,10 +1567,8 @@ class PlayState extends MusicBeatState
 		#if desktop
 		if (cond)
 			DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter(), true, songLength - Conductor.songPosition - ClientPrefs.data.noteOffset);
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - " + SONG.song + " [" + storyDifficultyText + "]";
 		#else
 			DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - " + SONG.song + " [" + storyDifficultyText + "]";
 		#end
 	}
 
@@ -1831,7 +1831,6 @@ class PlayState extends MusicBeatState
 
 		#if desktop
 		DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - " + SONG.song + " [" + storyDifficultyText + "]";
 		#end
 	}
 
@@ -1846,7 +1845,6 @@ class PlayState extends MusicBeatState
 		#if desktop
 		DiscordClient.changePresence("Chart Editor", null, null, true);
 		DiscordClient.resetClientID();
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - CHART EDITOR";
 		#end
 		
 		MusicBeatState.switchState(new ChartingState());
@@ -1893,7 +1891,6 @@ class PlayState extends MusicBeatState
 				#if desktop
 				// Game Over doesn't get his own variable because it's only used here
 				DiscordClient.changePresence("Game Over - " + detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
-				Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Game Over";
 				#end
 				isDead = true;
 				return true;
@@ -3389,15 +3386,15 @@ class PlayState extends MusicBeatState
 		var bads:Int = ratingsData[2].hits;
 		var shits:Int = ratingsData[3].hits;
 
-		ratingFC = 'Clear';
+		ratingFC = '[Clear]';
 		if(songMisses < 1)
 		{
-			if (bads > 0 || shits > 0) ratingFC = 'FC';
-			else if (goods > 0) ratingFC = 'GFC';
-			else if (sicks > 0) ratingFC = 'SFC';
+			if (bads > 0 || shits > 0) ratingFC = '[FC]';
+			else if (goods > 0) ratingFC = '[GFC]';
+			else if (sicks > 0) ratingFC = '[SFC]';
 		}
 		else if (songMisses < 10)
-			ratingFC = 'SDCB';
+			ratingFC = '[SDCB]';
 	}
 
 	#if ACHIEVEMENTS_ALLOWED

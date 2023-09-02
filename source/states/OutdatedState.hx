@@ -14,13 +14,13 @@ class OutdatedState extends MusicBeatState
 
 		warnText = new FlxText(0, 0, FlxG.width,
 			"Hey yo お前、今使ってるエンジンの\n
-			バージョンは (" + MainMenuState.psychEngineVersion + "),だが、アップデートが来たようだ、\n
+			バージョンは (" + MainMenuState.psychEngineVersion + ")だが、アップデートが来たようだ、\n
 			" + TitleState.updateVersion + "にアップデートしてくれ!\n
 			Escで非表示\n
 			\n
 			PE-JPを使ってくれてありがとう！",
 			32);
-		warnText.setFormat(Paths.font('vcr.ttf'), 32, FlxColor.WHITE, CENTER);
+		warnText.setFormat(Paths.font('system.ttf'), 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
 		add(warnText);
 	}

@@ -167,7 +167,7 @@ class NotesSubState extends MusicBeatSubstate
 
 	function updateTip()
 	{
-		tipTxt.text = 'Hold ' + (!controls.controllerMode ? 'Shift' : '左肩のボタン') + ' + RELOADを押して、選択したノーツを完全にリセット';
+		tipTxt.text = (!controls.controllerMode ? 'Shift' : '左肩のボタン') + 'を押しながらRELOADに設定したキーを押して、選択したノーツを完全にリセット';
 	}
 
 	var _storedColor:FlxColor;

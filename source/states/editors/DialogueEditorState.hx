@@ -72,18 +72,18 @@ class DialogueEditorState extends MusicBeatState
 		addEditorBox();
 		FlxG.mouse.visible = true;
 
-		var addLineText:FlxText = new FlxText(10, 10, FlxG.width - 20, '0でダイアログを削除できます, また、Pを押して新しいダイアログを追加できます。', 8);
-		addLineText.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		var addLineText:FlxText = new FlxText(10, 10, FlxG.width - 20, '0でダイアログを削除 | Pで新しいダイアログを追加', 8);
+		addLineText.setFormat(Paths.font("system.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		addLineText.scrollFactor.set();
 		add(addLineText);
 
 		selectedText = new FlxText(10, 32, FlxG.width - 20, '', 8);
-		selectedText.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		selectedText.setFormat(Paths.font("system.ttf"), 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		selectedText.scrollFactor.set();
 		add(selectedText);
 
 		animText = new FlxText(10, 62, FlxG.width - 20, '', 8);
-		animText.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		animText.setFormat(Paths.font("system.ttf"), 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		animText.scrollFactor.set();
 		add(animText);
 		
@@ -139,11 +139,11 @@ class DialogueEditorState extends MusicBeatState
 		var loadButton:FlxButton = new FlxButton(20, lineInputText.y + 25, "ダイアログを読み込み", function() {
 			loadDialogue();
 		});
-		var saveButton:FlxButton = new FlxButton(loadButton.x + 120, loadButton.y, "ダイアログの保存", function() {
+		var saveButton:FlxButton = new FlxButton(loadButton.x + 120, loadButton.y, "ダイアログを保存", function() {
 			saveDialogue();
 		});
 
-		tab_group.add(new FlxText(10, speedStepper.y - 18, 0, 'インターバル/スピード(ミリ秒):'));
+		tab_group.add(new FlxText(10, speedStepper.y - 18, 0, 'インターバル/スピード(ミリ秒単位):'));
 		tab_group.add(new FlxText(10, characterInputText.y - 18, 0, 'キャラクター:'));
 		tab_group.add(new FlxText(10, soundInputText.y - 18, 0, '音声ファイル名:'));
 		tab_group.add(new FlxText(10, lineInputText.y - 18, 0, '本文:'));
@@ -211,13 +211,13 @@ class DialogueEditorState extends MusicBeatState
 		characterAnimSpeed();
 
 		if(character.animation.curAnim != null && character.jsonFile.animations != null) {
-			animText.text = 'アニメーション: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - WかSでスクロール';
+			animText.text = 'アニメーション: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - WもしくはSでスクロール';
 		} else {
-			animText.text = 'エラー！アニメーションが見つかりません。';
+			animText.text = 'エラー！アニメーションが見つかりません';
 		}
 	}
 
-	private static var DEFAULT_TEXT:String = "gaaaaaaaaaaaaaaaaaaa";
+	private static var DEFAULT_TEXT:String = "nbvfrtygfdsweszaqw23ertghjkl";
 	private static var DEFAULT_SPEED:Float = 0.05;
 	private static var DEFAULT_BUBBLETYPE:String = "normal";
 	function reloadText(skipDialogue:Bool) {
@@ -244,8 +244,8 @@ class DialogueEditorState extends MusicBeatState
 		var rpcText:String = lineInputText.text;
 		if(rpcText == null || rpcText.length < 1) rpcText = '(Empty)';
 		if(rpcText.length < 3) rpcText += '   '; //Fixes a bug on RPC that triggers an error when the text is too short
-		DiscordClient.changePresence("DIALOGUE CHARACTER", rpcText);
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - DIALOGUE EDITOR";
+		DiscordClient.changePresence("ダイアログエディター", rpcText);
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Dialogue Editor";
 		#end
 	}
 
@@ -259,7 +259,7 @@ class DialogueEditorState extends MusicBeatState
 					curAnim = 0;
 					if(character.jsonFile.animations.length > curAnim && character.jsonFile.animations[curAnim] != null) {
 						character.playAnim(character.jsonFile.animations[curAnim].anim, daText.finishedText);
-						animText.text = 'アニメーション: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - WかSでスクロール';
+						animText.text = 'アニメーション: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - WもしくはSでスクロール';
 					} else {
 						animText.text = 'エラー！アニメーションが見つかりません';
 					}
@@ -356,7 +356,7 @@ class DialogueEditorState extends MusicBeatState
 						character.playAnim(animToPlay, daText.finishedText);
 						dialogueFile.dialogue[curSelected].expression = animToPlay;
 					}
-					animText.text = 'Animation: ' + animToPlay + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - WかSでスクロール';
+					animText.text = 'アニメーション: ' + animToPlay + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - WもしくはSでスクロール';
 				}
 				if(controlText[i]) {
 					changeText(negaMult[i]);
@@ -414,13 +414,13 @@ class DialogueEditorState extends MusicBeatState
 				}
 			}
 			character.playAnim(character.jsonFile.animations[curAnim].anim, daText.finishedText);
-			animText.text = 'アニメーション: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + leLength + ') - WかSでスクロール';
+			animText.text = 'アニメーション: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + leLength + ') - WもしくはSでスクロール';
 		} else {
 			animText.text = 'エラー！アニメーションが見つかりません';
 		}
 		characterAnimSpeed();
 
-		selectedText.text = 'Line: (' + (curSelected + 1) + ' / ' + dialogueFile.dialogue.length + ') - AかDでスクロール';
+		selectedText.text = 'ライン: (' + (curSelected + 1) + ' / ' + dialogueFile.dialogue.length + ') - AもしくはDでスクロール';
 	}
 
 	function characterAnimSpeed() {

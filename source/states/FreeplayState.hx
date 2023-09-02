@@ -144,7 +144,7 @@ class FreeplayState extends MusicBeatState
 		add(missingTextBG);
 		
 		missingText = new FlxText(50, 0, FlxG.width - 100, '', 24);
-		missingText.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		missingText.setFormat(Paths.font("system.ttf"), 24, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		missingText.scrollFactor.set();
 		missingText.visible = false;
 		add(missingText);
@@ -238,7 +238,7 @@ class FreeplayState extends MusicBeatState
 			ratingSplit[1] += '0';
 		}
 
-		scoreText.text = 'ベストスコア: ' + lerpScore + ' (' + ratingSplit.join('.') + '%)';
+		scoreText.text = 'ベストスコア: ' + lerpScore + ' | 精度:' + ratingSplit.join('.') + '%';
 		positionHighscore();
 
 		var shiftMult:Int = 1;
@@ -395,7 +395,7 @@ class FreeplayState extends MusicBeatState
 		{
 			persistentUpdate = false;
 			openSubState(new ResetScoreSubState(songs[curSelected].songName, curDifficulty, songs[curSelected].songCharacter));
-			FlxG.sound.play(Paths.sound('scrollM;enu'));
+			FlxG.sound.play(Paths.sound('scrollMenu'));
 		}
 
 		updateTexts(elapsed);

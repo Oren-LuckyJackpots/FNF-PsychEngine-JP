@@ -36,8 +36,8 @@ class MenuCharacterEditorState extends MusicBeatState
 		};
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("MENU CHARACTER EDITOR", "編集中: " + characterFile.image);
-		Lib.application.window.title ="Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - MENU CHARACTER EDITOR";
+		DiscordClient.changePresence("Weekキャラクターエディター", "編集中: " + characterFile.image);
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Week Character Editor";
 		#end
 
 		grpWeekCharacters = new FlxTypedGroup<MenuCharacter>();
@@ -60,7 +60,7 @@ class MenuCharacterEditorState extends MusicBeatState
 		var tipText:FlxText = new FlxText(0, 540, FlxG.width,
 			"矢印キー - オフセットの変更(Shiftを押しながらすると10倍)
 			\nSpace - Start Pressアニメーションを再生 (Boyfriend Character Type)", 16);
-		tipText.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER);
+		tipText.setFormat(Paths.font("system.ttf"), 16, FlxColor.WHITE, CENTER);
 		tipText.scrollFactor.set();
 		add(tipText);
 
@@ -76,7 +76,7 @@ class MenuCharacterEditorState extends MusicBeatState
 	var blockPressWhileTypingOn:Array<FlxUIInputText> = [];
 	function addEditorBox() {
 		var tabs = [
-			{name: 'キャラクタータイプ', label: 'Character Type'},
+			{name: 'キャラタイプ', label: 'Character Type'},
 		];
 		UI_typebox = new FlxUITabMenu(null, tabs, true);
 		UI_typebox.resize(120, 180);
@@ -97,14 +97,14 @@ class MenuCharacterEditorState extends MusicBeatState
 		addCharacterUI();
 		add(UI_mainbox);
 
-		var loadButton:FlxButton = new FlxButton(0, 480, "キャラクターを読み込み", function() {
+		var loadButton:FlxButton = new FlxButton(0, 480, "キャラを読み込み", function() {
 			loadCharacter();
 		});
 		loadButton.screenCenter(X);
 		loadButton.x -= 60;
 		add(loadButton);
 	
-		var saveButton:FlxButton = new FlxButton(0, 480, "キャラクターを保存", function() {
+		var saveButton:FlxButton = new FlxButton(0, 480, "キャラを保存", function() {
 			saveCharacter();
 		});
 		saveButton.screenCenter(X);
@@ -118,7 +118,7 @@ class MenuCharacterEditorState extends MusicBeatState
 	var curTypeSelected:Int = 0; //0 = Dad, 1 = BF, 2 = GF
 	function addTypeUI() {
 		var tab_group = new FlxUI(null, UI_typebox);
-		tab_group.name = "Character Type";
+		tab_group.name = "キャラタイプ";
 
 		opponentCheckbox = new FlxUICheckBox(10, 20, null, null, "敵", 100);
 		opponentCheckbox.callback = function()
@@ -127,14 +127,14 @@ class MenuCharacterEditorState extends MusicBeatState
 			updateCharTypeBox();
 		};
 
-		boyfriendCheckbox = new FlxUICheckBox(opponentCheckbox.x, opponentCheckbox.y + 40, null, null, "BF", 100);
+		boyfriendCheckbox = new FlxUICheckBox(opponentCheckbox.x, opponentCheckbox.y + 40, null, null, "Boyfriend", 100);
 		boyfriendCheckbox.callback = function()
 		{
 			curTypeSelected = 1;
 			updateCharTypeBox();
 		};
 
-		girlfriendCheckbox = new FlxUICheckBox(boyfriendCheckbox.x, boyfriendCheckbox.y + 40, null, null, "GF", 100);
+		girlfriendCheckbox = new FlxUICheckBox(boyfriendCheckbox.x, boyfriendCheckbox.y + 40, null, null, "Girlfriend", 100);
 		girlfriendCheckbox.callback = function()
 		{
 			curTypeSelected = 2;
@@ -176,9 +176,9 @@ class MenuCharacterEditorState extends MusicBeatState
 		
 		scaleStepper = new FlxUINumericStepper(140, imageInputText.y, 0.05, 1, 0.1, 30, 2);
 
-		var confirmDescText = new FlxText(10, confirmInputText.y - 18, 0, 'Start Press アニメーション on .XML:');
-		tab_group.add(new FlxText(10, imageInputText.y - 18, 0, '画像ファイル名:'));
-		tab_group.add(new FlxText(10, idleInputText.y - 18, 0, 'アイドルアニメーション on .XML:'));
+		var confirmDescText = new FlxText(10, confirmInputText.y - 18, 0, '.XML上でのWeek決定アニメーション名:');
+		tab_group.add(new FlxText(10, imageInputText.y - 18, 0, 'スプライトファイル名:'));
+		tab_group.add(new FlxText(10, idleInputText.y - 18, 0, '.XML上でのアイドルアニメーション名:'));
 		tab_group.add(new FlxText(scaleStepper.x, scaleStepper.y - 18, 0, '大きさ:'));
 		tab_group.add(flipXCheckbox);
 		tab_group.add(reloadImageButton);
@@ -233,8 +233,7 @@ class MenuCharacterEditorState extends MusicBeatState
 		
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("MENU CHARACTER EDITOR", "編集中: " + characterFile.image);
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - MENU CHARACTER EDITOR";
+		DiscordClient.changePresence("Weekキャラクターエディター", "編集中: " + characterFile.image);
 		#end
 	}
 

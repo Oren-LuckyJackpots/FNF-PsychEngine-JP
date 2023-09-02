@@ -20,7 +20,7 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 
 		//I'd suggest using "Low Quality" as an example for making your own option since it is the simplest here
 		var option:Option = new Option('Low Quality', //Name
-			'パフォーマンスが悪い場合、このチェックを入れると背景が軽いものに変更されますが、\nクオリティが低くなります。', //Description
+			'パフォーマンスが悪い場合、このチェックを入れると背景が軽量版に変更されますが、\nクオリティが低くなります。', //Description
 			'lowQuality', //Save data variable name
 			'bool'); //Variable type
 		addOption(option);

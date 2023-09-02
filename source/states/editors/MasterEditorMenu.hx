@@ -1,5 +1,6 @@
 package states.editors;
 
+import openfl.Lib;
 import backend.WeekData;
 
 #if MODS_ALLOWED
@@ -7,8 +8,6 @@ import sys.FileSystem;
 #end
 
 import objects.Character;
-
-import openfl.Lib;
 
 import states.MainMenuState;
 import states.FreeplayState;
@@ -19,7 +18,7 @@ class MasterEditorMenu extends MusicBeatState
 		'Chart Editor',
 		'Character Editor',
 		'Week Editor',
-		'Menu Character Editor',
+		'Week Character Editor',
 		'Dialogue Editor',
 		'Dialogue Portrait Editor',
 		'Note Splash Debug'
@@ -36,8 +35,8 @@ class MasterEditorMenu extends MusicBeatState
 		FlxG.camera.bgColor = FlxColor.BLACK;
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("Editors Main Menu", null);
-		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Main Editor Menu";
+		DiscordClient.changePresence("エディター選択", null);
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Select Editors";
 		#end
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
@@ -63,7 +62,7 @@ class MasterEditorMenu extends MusicBeatState
 		add(textBG);
 
 		directoryTxt = new FlxText(textBG.x, textBG.y + 4, FlxG.width, '', 32);
-		directoryTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER);
+		directoryTxt.setFormat(Paths.font("system.ttf"), 32, FlxColor.WHITE, CENTER);
 		directoryTxt.scrollFactor.set();
 		add(directoryTxt);
 		
@@ -117,7 +116,7 @@ class MasterEditorMenu extends MusicBeatState
 					LoadingState.loadAndSwitchState(new CharacterEditorState(Character.DEFAULT_CHARACTER, false));
 				case 'Week Editor':
 					MusicBeatState.switchState(new WeekEditorState());
-				case 'Menu Character Editor':
+				case 'Week Character Editor':
 					MusicBeatState.switchState(new MenuCharacterEditorState());
 				case 'Dialogue Editor':
 					LoadingState.loadAndSwitchState(new DialogueEditorState(), false);
@@ -176,11 +175,11 @@ class MasterEditorMenu extends MusicBeatState
 	
 		WeekData.setDirectoryFromWeek();
 		if(directories[curDirectory] == null || directories[curDirectory].length < 1)
-			directoryTxt.text = '< MODがロードされていません >';
+			directoryTxt.text = 'ロードされているMOD: < なし >';
 		else
 		{
 			Mods.currentModDirectory = directories[curDirectory];
-			directoryTxt.text = '< ロードしているMOD: ' + Mods.currentModDirectory + ' >';
+			directoryTxt.text = 'ロードされているMOD: < ' + Mods.currentModDirectory + ' >';
 		}
 		directoryTxt.text = directoryTxt.text.toUpperCase();
 	}
