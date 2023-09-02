@@ -238,7 +238,7 @@ class FreeplayState extends MusicBeatState
 			ratingSplit[1] += '0';
 		}
 
-		scoreText.text = 'ベストスコア: ' + lerpScore + ' | 精度:' + ratingSplit.join('.') + '%';
+		scoreText.text = 'ベストスコア: ' + lerpScore + ' | 精度: ' + ratingSplit.join('.') + '%';
 		positionHighscore();
 
 		var shiftMult:Int = 1;
@@ -388,7 +388,7 @@ class FreeplayState extends MusicBeatState
 			destroyFreeplayVocals();
 			#if MODS_ALLOWED
 			DiscordClient.loadModRPC();
-			Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - FREE PLAY - Selecting to:" + songs[curSelected].songName + "[" + curDifficulty + "]";
+			Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - FREE PLAY - Selecting to:" + songs[curSelected].songName;
 			#end
 		}
 		else if(controls.RESET)

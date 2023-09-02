@@ -61,7 +61,7 @@ class MasterEditorMenu extends MusicBeatState
 		textBG.alpha = 0.6;
 		add(textBG);
 
-		directoryTxt = new FlxText(textBG.x, textBG.y + 4, FlxG.width, '', 32);
+		directoryTxt = new FlxText(textBG.x, textBG.y, FlxG.width, '', 32);
 		directoryTxt.setFormat(Paths.font("system.ttf"), 32, FlxColor.WHITE, CENTER);
 		directoryTxt.scrollFactor.set();
 		add(directoryTxt);

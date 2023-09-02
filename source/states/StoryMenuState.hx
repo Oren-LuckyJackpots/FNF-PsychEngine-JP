@@ -62,7 +62,7 @@ class StoryMenuState extends MusicBeatState
 
 		var rankText:FlxText = new FlxText(0, 10);
 		rankText.text = 'RANK: GREAT';
-		rankText.setFormat(Paths.font("vcr.ttf"), 32);
+		rankText.setFormat(Paths.font("VCR OSD Mono.ttf"), 32);
 		rankText.size = scoreText.size;
 		rankText.screenCenter(X);
 
