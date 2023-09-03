@@ -553,8 +553,8 @@ class PlayState extends MusicBeatState
 		scoreTxt.visible = !ClientPrefs.data.hideHud;
 		add(scoreTxt);
 
-		botplayTxt = new FlxText(400, timeBar.y + 55, FlxG.width - 800, "AUTOPLAY", 32);
-		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		botplayTxt = new FlxText(400, timeBar.y + 55, FlxG.width - 800, "BOTPLAY", 32);
+		botplayTxt.setFormat(Paths.font("VCR OSD Mono.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
@@ -1137,10 +1137,10 @@ class PlayState extends MusicBeatState
 			var percent:Float = CoolUtil.floorDecimal(ratingPercent * 100, 2);
 			str += ' $percent% $ratingFC';
 		}
-
+		var percent:Float = CoolUtil.floorDecimal(ratingPercent * 100, 2);
 		scoreTxt.text = 'スコア: ' + songScore
 		+ ' | ミス数: ' + songMisses
-		+ ' | 精度: ';
+		+ ' | 精度: ' + percent + "% " + ratingFC;
 
 		if(ClientPrefs.data.scoreZoom && !miss && !cpuControlled)
 		{

@@ -47,11 +47,12 @@ class CreditsState extends MusicBeatState
 
 		var defaultList:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
 			['Psych Engine-JP Dev'],
-			['Shundesu',		    'shundesu',		    '開発リーダー',								                     'https://twitter.com/Shun_Yoro_',	     '444444'],
+			['Shundesu',		    'shundesu',		    '開発リーダー',								                     'https://twitter.com/Shun_Yoro_',	     'FFD700'],
+			['Shundesu Server',     'official',         'Too Japanese',                                                 'https://discord.gg/Xt8A8d28BE',        '1E90FF'],
 			[''],
 			['JPsych Engine Dev'],
-			['warabi-mt',		    'warabi',		    'JPsych Engine 制作者',								            'https://twitter.com/warabi-mt17',	     'F4A460'],
-			['KuroGamiZERO',		'KRGMZERO',			'JPsych Engine 制作協力者',							            'https://kurokamizero.jimdofree.com/',	 '555555'],
+			['warabi-mt',		    'warabi',		    'JPsych Engine Leader',								            'https://twitter.com/warabi-mt17',	     'F4A460'],
+			['JPsych Dev Team',		'jpsych',			'JPsych Engine Team',							                'https://fnf-jpsych-engine.jimdofree.com/','DB7093'],
 			[''],
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],

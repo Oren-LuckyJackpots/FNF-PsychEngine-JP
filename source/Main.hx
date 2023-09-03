@@ -25,9 +25,6 @@ import sys.io.Process;
 
 class Main extends Sprite
 {
-	public static var FONT_DEFAULT:String = "Noto Sans JP SemiBold";
-	public static var FONT_DEBUGGER:String = "Monsterrat";
-
 	var game = {
 		width: 1280, // WINDOW width
 		height: 720, // WINDOW height
