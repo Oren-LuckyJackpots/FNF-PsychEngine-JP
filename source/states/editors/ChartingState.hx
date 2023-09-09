@@ -310,12 +310,12 @@ class ChartingState extends MusicBeatState
 		add(dummyArrow);
 
 		var tabs = [
-			{name: "曲情報", label: 'Song'},
-			{name: "セクション", label: 'Section'},
-			{name: "ノーツ", label: 'Note'},
-			{name: "イベント", label: 'Events'},
-			{name: "チャート", label: 'Charting'},
-			{name: "データ", label: 'Data'},
+			{name: "Song", label: '曲情報'},
+			{name: "Section", label: 'セクション'},
+			{name: "Note", label: 'ノーツ'},
+			{name: "Events", label: 'イベント'},
+			{name: "Charting", label: 'チャート'},
+			{name: "Data", label: 'データ'},
 		];
 
 		UI_box = new FlxUITabMenu(null, tabs, true);
@@ -326,7 +326,7 @@ class ChartingState extends MusicBeatState
 		UI_box.scrollFactor.set();
 
 		text =
-		"W/S or マウスホイール - 指揮者の打鍵時間を変更する
+		"W/S もしくは マウスホイール - 指揮者の打鍵時間を変更する
 		\nA/D - 前/次 のセクションへ
 		\nLeft/Right - スナップ変更
 		\nUp/Down - スナッピングで指揮者の打鍵時間を変える
@@ -584,7 +584,7 @@ class ChartingState extends MusicBeatState
 		blockPressWhileScrolling.push(stageDropDown);
 
 		var tab_group_song = new FlxUI(null, UI_box);
-		tab_group_song.name = "曲情報";
+		tab_group_song.name = "Song";
 		tab_group_song.add(UI_songTitle);
 
 		tab_group_song.add(check_voices);
@@ -628,7 +628,7 @@ class ChartingState extends MusicBeatState
 	function addSectionUI():Void
 	{
 		var tab_group_section = new FlxUI(null, UI_box);
-		tab_group_section.name = 'セクション';
+		tab_group_section.name = 'Section';
 
 		check_mustHitSection = new FlxUICheckBox(10, 15, null, null, "BFが歌う", 100);
 		check_mustHitSection.name = 'check_mustHit';
@@ -892,7 +892,7 @@ class ChartingState extends MusicBeatState
 	function addNoteUI():Void
 	{
 		var tab_group_note = new FlxUI(null, UI_box);
-		tab_group_note.name = 'ノーツ';
+		tab_group_note.name = 'Note';
 
 		stepperSusLength = new FlxUINumericStepper(10, 25, Conductor.stepCrochet / 2, 0, 0, Conductor.stepCrochet * 64);
 		stepperSusLength.value = 0;
@@ -962,7 +962,7 @@ class ChartingState extends MusicBeatState
 	function addEventsUI():Void
 	{
 		var tab_group_event = new FlxUI(null, UI_box);
-		tab_group_event.name = 'イベント';
+		tab_group_event.name = 'Events';
 
 		#if LUA_ALLOWED
 		var eventPushedMap:Map<String, Bool> = new Map<String, Bool>();
@@ -1097,7 +1097,7 @@ class ChartingState extends MusicBeatState
 		setAllLabelsOffset(moveRightButton, -30, 0);
 		tab_group_event.add(moveRightButton);
 
-		selectedEventText = new FlxText(addButton.x - 100, addButton.y + addButton.height + 6, (moveRightButton.x - addButton.x) + 186, 'Selected Event: None');
+		selectedEventText = new FlxText(addButton.x - 100, addButton.y + addButton.height + 6, (moveRightButton.x - addButton.x) + 186, '選択中のイベント: 無し');
 		selectedEventText.alignment = CENTER;
 		tab_group_event.add(selectedEventText);
 
@@ -1147,7 +1147,7 @@ class ChartingState extends MusicBeatState
 	var voicesVolume:FlxUINumericStepper;
 	function addChartingUI() {
 		var tab_group_chart = new FlxUI(null, UI_box);
-		tab_group_chart.name = 'チャート';
+		tab_group_chart.name = 'Charting';
 
 		#if desktop
 		if (FlxG.save.data.chart_waveformInst == null) FlxG.save.data.chart_waveformInst = false;
@@ -1316,7 +1316,7 @@ class ChartingState extends MusicBeatState
 	function addDataUI()
 	{
 		var tab_group_data = new FlxUI(null, UI_box);
-		tab_group_data.name = 'データ';
+		tab_group_data.name = 'Data';
 
 		//
 		gameOverCharacterInputText = new FlxUIInputText(10, 25, 150, _song.gameOverChar != null ? _song.gameOverChar : '', 8);

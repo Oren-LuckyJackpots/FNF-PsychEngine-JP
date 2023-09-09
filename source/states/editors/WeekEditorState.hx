@@ -119,7 +119,7 @@ class WeekEditorState extends MusicBeatState
 	function addEditorBox() {
 		var tabs = [
 			{name: 'Week', label: 'Week'},
-			{name: 'Other', label: 'Other'},
+			{name: 'Other', label: 'その他'},
 		];
 		UI_box = new FlxUITabMenu(null, tabs, true);
 		UI_box.resize(250, 375);
@@ -229,7 +229,7 @@ class WeekEditorState extends MusicBeatState
 
 	function addOtherUI() {
 		var tab_group = new FlxUI(null, UI_box);
-		tab_group.name = "その他";
+		tab_group.name = "Other";
 
 		lockedCheckbox = new FlxUICheckBox(10, 30, null, null, "ロックする", 100);
 		lockedCheckbox.callback = function()

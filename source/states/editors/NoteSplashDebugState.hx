@@ -96,17 +96,17 @@ class NoteSplashDebugState extends MusicBeatState
 
 		//
 		offsetsText = new FlxText(300, 150, 680, '', 16);
-		offsetsText.setFormat(Paths.font("VCR OSD Mono.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		offsetsText.setFormat(Paths.font("system.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		offsetsText.scrollFactor.set();
 		add(offsetsText);
 
 		curFrameText = new FlxText(300, 100, 680, '', 16);
-		curFrameText.setFormat(Paths.font("VCR OSD Mono.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		curFrameText.setFormat(Paths.font("system.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		curFrameText.scrollFactor.set();
 		add(curFrameText);
 
 		curAnimText = new FlxText(300, 50, 680, '', 16);
-		curAnimText.setFormat(Paths.font("VCR OSD Mono.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		curAnimText.setFormat(Paths.font("system.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		curAnimText.scrollFactor.set();
 		add(curAnimText);
 
@@ -115,12 +115,12 @@ class NoteSplashDebugState extends MusicBeatState
 			ENTERを2回押し、読み込んだノートスプラッシュPNGのフォルダに保存\n
 			A/D ノーツを変更 - 矢印キーでオフセットを変更(Shiftを押しながらすると10倍)\n
 			Ctrl + C/V - コピー・ペースト", 16);
-		text.setFormat(Paths.font("system.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		text.setFormat(Paths.font("system.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		text.scrollFactor.set();
 		add(text);
 
 		savedText = new FlxText(0, 340, FlxG.width, '', 24);
-		savedText.setFormat(Paths.font("system.ttf"), 24, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		savedText.setFormat(Paths.font("system.ttf"), 24, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		savedText.scrollFactor.set();
 		add(savedText);
 

@@ -76,7 +76,7 @@ class MenuCharacterEditorState extends MusicBeatState
 	var blockPressWhileTypingOn:Array<FlxUIInputText> = [];
 	function addEditorBox() {
 		var tabs = [
-			{name: 'キャラタイプ', label: 'Character Type'},
+			{name: 'Character Type', label: 'キャラクタータイプ'},
 		];
 		UI_typebox = new FlxUITabMenu(null, tabs, true);
 		UI_typebox.resize(120, 180);
@@ -87,7 +87,7 @@ class MenuCharacterEditorState extends MusicBeatState
 		add(UI_typebox);
 
 		var tabs = [
-			{name: 'キャラクター', label: 'Character'},
+			{name: 'Character', label: 'キャラクター'},
 		];
 		UI_mainbox = new FlxUITabMenu(null, tabs, true);
 		UI_mainbox.resize(240, 180);
@@ -118,7 +118,7 @@ class MenuCharacterEditorState extends MusicBeatState
 	var curTypeSelected:Int = 0; //0 = Dad, 1 = BF, 2 = GF
 	function addTypeUI() {
 		var tab_group = new FlxUI(null, UI_typebox);
-		tab_group.name = "キャラタイプ";
+		tab_group.name = "Character Type";
 
 		opponentCheckbox = new FlxUICheckBox(10, 20, null, null, "敵", 100);
 		opponentCheckbox.callback = function()

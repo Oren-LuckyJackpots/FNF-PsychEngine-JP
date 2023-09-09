@@ -144,7 +144,7 @@ class CharacterEditorState extends MusicBeatState
 		{
 			var tipText:FlxText = new FlxText(FlxG.width - 320, FlxG.height - 15 - 16 * (tipTextArray.length - i), 300, tipTextArray[i], 12);
 			tipText.cameras = [camHUD];
-			tipText.setFormat(Paths.font('vcr.ttf'), 12, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE_FAST, FlxColor.BLACK);
+			tipText.setFormat(Paths.font('system.ttf'), 12, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE_FAST, FlxColor.BLACK);
 			tipText.scrollFactor.set();
 			tipText.borderSize = 1;
 			add(tipText);
@@ -154,7 +154,7 @@ class CharacterEditorState extends MusicBeatState
 
 		var tabs = [
 			//{name: 'Offsets', label: 'Offsets'},
-			{name: '設定', label: 'Settings'},
+			{name: 'Settings', label: '設定'},
 		];
 
 		UI_box = new FlxUITabMenu(null, tabs, true);
@@ -166,8 +166,8 @@ class CharacterEditorState extends MusicBeatState
 		UI_box.scrollFactor.set();
 
 		var tabs = [
-			{name: 'キャラクター', label: 'Character'},
-			{name: 'アニメーション', label: 'Animations'},
+			{name: 'Character', label: 'キャラクター'},
+			{name: 'Animation', label: 'アニメーション'},
 		];
 		UI_characterbox = new FlxUITabMenu(null, tabs, true);
 		UI_characterbox.cameras = [camMenu];
@@ -399,7 +399,7 @@ class CharacterEditorState extends MusicBeatState
 	var charDropDown:FlxUIDropDownMenu;
 	function addSettingsUI() {
 		var tab_group = new FlxUI(null, UI_box);
-		tab_group.name = "設定";
+		tab_group.name = "Settings";
 
 		var check_player = new FlxUICheckBox(10, 60, null, null, "プレイヤーとする", 100);
 		check_player.checked = daAnim.startsWith('bf');
@@ -596,7 +596,7 @@ class CharacterEditorState extends MusicBeatState
 	var animationLoopCheckBox:FlxUICheckBox;
 	function addAnimationsUI() {
 		var tab_group = new FlxUI(null, UI_box);
-		tab_group.name = "アニメーション";
+		tab_group.name = "Animations";
 
 		animationInputText = new FlxUIInputText(15, 85, 80, '', 8);
 		animationNameInputText = new FlxUIInputText(animationInputText.x, animationInputText.y + 35, 150, '', 8);

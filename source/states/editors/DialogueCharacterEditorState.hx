@@ -155,7 +155,7 @@ class DialogueCharacterEditorState extends MusicBeatState
 	var UI_mainbox:FlxUITabMenu;
 	function addEditorBox() {
 		var tabs = [
-			{name: 'キャラクタータイプ', label: 'Character Type'},
+			{name: 'Character Type', label: 'キャラクタータイプ'},
 		];
 		UI_typebox = new FlxUITabMenu(null, tabs, true);
 		UI_typebox.resize(120, 180);
@@ -167,8 +167,8 @@ class DialogueCharacterEditorState extends MusicBeatState
 		add(UI_typebox);
 
 		var tabs = [
-			{name: 'アニメーション', label: 'Animations'},
-			{name: 'キャラクター', label: 'Character'},
+			{name: 'Animations', label: 'アニメーション'},
+			{name: 'Character', label: 'キャラクター'},
 		];
 		UI_mainbox = new FlxUITabMenu(null, tabs, true);
 		UI_mainbox.resize(200, 250);
@@ -188,7 +188,7 @@ class DialogueCharacterEditorState extends MusicBeatState
 	var rightCheckbox:FlxUICheckBox;
 	function addTypeUI() {
 		var tab_group = new FlxUI(null, UI_typebox);
-		tab_group.name = "キャラクター";
+		tab_group.name = "Character";
 
 		leftCheckbox = new FlxUICheckBox(10, 20, null, null, "左側", 100);
 		leftCheckbox.callback = function()
@@ -225,7 +225,7 @@ class DialogueCharacterEditorState extends MusicBeatState
 	var idleInputText:FlxUIInputText;
 	function addAnimationsUI() {
 		var tab_group = new FlxUI(null, UI_mainbox);
-		tab_group.name = "アニメーション";
+		tab_group.name = "Animations";
 
 		animationDropDown = new FlxUIDropDownMenu(10, 30, FlxUIDropDownMenu.makeStrIdLabelArray([''], true), function(animation:String) {
 			var anim:String = animationArray[Std.parseInt(animation)];
@@ -347,7 +347,7 @@ class DialogueCharacterEditorState extends MusicBeatState
 	var blockPressWhileTypingOn:Array<FlxUIInputText> = [];
 	function addCharacterUI() {
 		var tab_group = new FlxUI(null, UI_mainbox);
-		tab_group.name = "キャラクター";
+		tab_group.name = "Character";
 
 		imageInputText = new FlxUIInputText(10, 30, 80, character.jsonFile.image, 8);
 		blockPressWhileTypingOn.push(imageInputText);
@@ -480,7 +480,7 @@ class DialogueCharacterEditorState extends MusicBeatState
 	}
 
 	var currentGhosts:Int = 0;
-	var lastTab:String = 'キャラクター';
+	var lastTab:String = 'Character';
 	var transitioning:Bool = false;
 	override function update(elapsed:Float) {
 		MusicBeatState.camBeat = FlxG.camera;
