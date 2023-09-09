@@ -188,7 +188,7 @@ class DialogueCharacterEditorState extends MusicBeatState
 	var rightCheckbox:FlxUICheckBox;
 	function addTypeUI() {
 		var tab_group = new FlxUI(null, UI_typebox);
-		tab_group.name = "Character";
+		tab_group.name = "Character Type";
 
 		leftCheckbox = new FlxUICheckBox(10, 20, null, null, "左側", 100);
 		leftCheckbox.callback = function()

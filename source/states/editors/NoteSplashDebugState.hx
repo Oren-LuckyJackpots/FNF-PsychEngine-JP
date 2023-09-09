@@ -112,9 +112,9 @@ class NoteSplashDebugState extends MusicBeatState
 
 		var text:FlxText = new FlxText(0, 520, FlxG.width,
 			"SPACEでアニメーションをリセット\n
-			ENTERを2回押し、読み込んだノートスプラッシュPNGのフォルダに保存\n
-			A/D ノーツを変更 - 矢印キーでオフセットを変更(Shiftを押しながらすると10倍)\n
-			Ctrl + C/V - コピー・ペースト", 16);
+			    ENTERを2回押し、読み込んだノートスプラッシュPNGのフォルダに保存\n
+			    A/D ノーツを変更 - 矢印キーでオフセットを変更(Shiftを押しながらすると10倍)\n
+			    Ctrl + C/V - コピー・ペースト", 16);
 		text.setFormat(Paths.font("system.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		text.scrollFactor.set();
 		add(text);

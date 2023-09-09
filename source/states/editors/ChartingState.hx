@@ -1279,7 +1279,7 @@ class ChartingState extends MusicBeatState
 		
 		#if !html5
 		sliderRate = new FlxUISlider(this, 'playbackSpeed', 120, 120, 0.5, 3, 150, null, 5, FlxColor.WHITE, FlxColor.BLACK);
-		sliderRate.nameLabel.text = 'Playback Rate';
+		sliderRate.nameLabel.text = '再生速度';
 		tab_group_chart.add(sliderRate);
 		#end
 

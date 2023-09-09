@@ -596,7 +596,7 @@ class CharacterEditorState extends MusicBeatState
 	var animationLoopCheckBox:FlxUICheckBox;
 	function addAnimationsUI() {
 		var tab_group = new FlxUI(null, UI_box);
-		tab_group.name = "Animations";
+		tab_group.name = "Animation";
 
 		animationInputText = new FlxUIInputText(15, 85, 80, '', 8);
 		animationNameInputText = new FlxUIInputText(animationInputText.x, animationInputText.y + 35, 150, '', 8);

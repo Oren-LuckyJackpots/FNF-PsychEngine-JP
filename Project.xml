@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ アプリ全体の設定 _________________________ -->
 
-	<app title="Friday Night Funkin': Psych Engine-JP - Friday Night Funkin'の日本語版" file="PsychEngine-JP" packageName="com.shundesu.psychenginejp" package="com.shundesu.psychenginejp" main="Main" version="0.2.8" company="Shundesu" />
+	<app title="Friday Night Funkin': Psych Engine-JP - An Japanese version of Friday Night Funkin'." file="PsychEngine-JP" packageName="com.shundesu.psychenginejp" package="com.shundesu.psychenginejp" main="Main" version="0.2.8" company="Shundesu" />
 
 	<!--固有のApplicationIDとアイコンによるSwitch用のエクスポート-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
