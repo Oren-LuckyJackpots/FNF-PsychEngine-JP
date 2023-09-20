@@ -7,7 +7,7 @@
 	<!--固有のApplicationIDとアイコンによるSwitch用のエクスポート-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
 
-	<!-- 自分に言い聞かせてるよ: 問題が見つかったらこれを無効に -->
+	<!-- メモ: 問題が見つかったらこれを無効に -->
 	<haxedef name="LINC_LUA_RELATIVE_DYNAMIC_LIB"/> <!-- 安定したLua 最初の行の後にアプリ名とかを入れる -->
 
 	<!--FlixelのプリローダーはChromeでは正確ではないがswfをhtmlファイルに埋め込めば、定期的に使用できる
@@ -24,8 +24,8 @@
 	<define name="LUA_ALLOWED" if="desktop" />
 	<define name="ACHIEVEMENTS_ALLOWED" />
 	<define name="VIDEOS_ALLOWED" if="windows || linux || android" unless="32bits"/>
-	<define name="PSYCH_WATERMARKS"/> <!-- これを削除すると、タイトル画面の透かしや開発者名が削除されます。 -->
-	<define name="TITLE_SCREEN_EASTER_EGG" if="officialBuild"/> <!-- 非公式ビルドで有効にする場合は、if="officialBuild "を削除する。 -->
+	<define name="PSYCH_WATERMARKS"/> <!-- これを削除すると、タイトル画面の透かしや開発者名が削除されます。(今は機能していません) -->
+	<define name="TITLE_SCREEN_EASTER_EGG" if="officialBuild"/> <!-- 非公式ビルドで有効にする場合は、if="officialBuild"を削除する。 -->
 
 	<!-- ____________________________ ウィンドウの設定 ___________________________ -->
 

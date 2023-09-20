@@ -293,13 +293,13 @@ class ControlsSubState extends MusicBeatSubstate
 					FlxTween.tween(bindingBlack, {alpha: 0.6}, 0.35, {ease: FlxEase.linear});
 					add(bindingBlack);
 
-					bindingText = new FlxText(FlxG.width / -5000, 160, options[curOptions[curSelected]][3] + "に対応するキーを設定", false);
-					bindingText.setFormat(Paths.font("system.ttf"), 50, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+					bindingText = new FlxText(0, 0, options[curOptions[curSelected]][3] + "に対応するキーを設定", false);
+					bindingText.setFormat(Paths.font("system.ttf"), 50, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 					bindingText.borderSize = 3;
 					add(bindingText);
 					
-					bindingText2 = new FlxText(FlxG.width / -5000, 340, "     Escでキャンセル\n     Backspaceでキーを削除", true);
-					bindingText2.setFormat(Paths.font("system.ttf"), 50, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+					bindingText2 = new FlxText(0, 0, "Escでキャンセル\nBackspaceでキーを削除", true);
+					bindingText2.setFormat(Paths.font("system.ttf"), 50, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 					bindingText2.borderSize = 3;
 					add(bindingText2);
 

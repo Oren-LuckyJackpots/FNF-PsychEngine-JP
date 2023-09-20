@@ -19,7 +19,7 @@ import options.OptionsState;
 class MainMenuState extends MusicBeatState
 {
 	public static var psychEngineVersion:String = '0.7.1h'; //This is also used for Discord RPC
-	public static var psychEngineJPVersion:String = '0.7.1h-1.0.0';
+	public static var psychEngineJPVersion:String = '0.7.1h-1.0.2';
 	public static var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
