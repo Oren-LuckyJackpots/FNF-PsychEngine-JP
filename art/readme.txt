@@ -16,63 +16,62 @@
                  /          _/           /             
 
 HEY
-Thanks for downloadin Friday Night FUNKIN'
-If you downloaded this from any other place than ninja-muffin24.itch.io/FUNKIN
-You might be in DANGER!!! 
+Friday Night FUNKIN'をダウンロードしていただきありがとうございます。
+注意！ninjamuffin24.itch.io/FUNKIN 以外からダウンロードした場合
+危険です！ 
+PIRACYPIRACY
+Itch.ioのリリースは、このゲームのデスクトップ（PC、Mac、Linux）版の唯一の公式ソースです！
+今現在、ゲームは無料です！もしお金を払ったのなら、あなたは詐欺にあったんです！
 
-The Itch.io release is the only official source for the desktop (PC, Mac, Linux) versions of the game!
-As of right now, the game is FREE! If you paid for it, you got SCAMMED!
-
-Now that that's out of the way....
-THANKS FOR DOWNLOADIN. 
-
+さて、それはさておき...。
+ダウンロードしてくれてありがとう。
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
-    PERMISSIONS XDDDD
-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
-
-Little info, you have FULL PERMISSION to stream, letsplay, meme, shitpost, do WHATEVER you want with the game.
-Use the music in videos you do, use art, ANYTHING. GO CRAZY BRO.
-
-If you do make any sort of video, it would be a bro move if you linked the game and spread the word
-
-Play On Newgrounds - https://www.newgrounds.com/portal/view/770371
-Support on Itch.io - https://ninja-muffin24.itch.io/funkin
-
-If not no biggie we don't fully hate you only kinda no biggie.
-
-
-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
-    INFO AND LINKS
+    許可証 XDDDD
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
 
-If you wanna dig around, the game is fully open source on Github
+ちょっとした情報だが、ストリーミング、ゲームプレイの配信、ミーム、ク◯みたいな投稿など、このゲームでやりたいことは何でも許可されている。
+ビデオで音楽を使ったり、アートを使ったり、何でも。行こーぜ狂気の兄ちゃん
+
+あなたがビデオの任意の並べ替えを行う場合、それはあなたがゲームをリンクし、単語を広める場合、仲間の動きだろう
+
+Newgroundsで遊ぶ - https://www.newgrounds.com/portal/view/770371
+Itch.ioのサポート - https://ninja-muffin24.itch.io/funkin
+
+大したことない場合は、我々は完全にあなただけのちょっと、、まぁ嫌いではない。
+
+
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
+    情報とリンク
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
+
+Githubにオープンソースで公開されています。
 https://github.com/ninjamuffin99/Funkin
 
-It's made in Haxe / HaxeFlixel
+Haxe / HaxeFlixelで作られています。
 
-MUSIC IS ON SPOTIFY AND BANDCAMP AND EVERYWHERE ELSE PROB TOO
+音楽はSpotifyとBandcampにあります。
 https://kawaisprite.bandcamp.com/album/friday-night-funkin-ost-vol-1
 
 
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
-    FINAL WORDS / CREDITS
+    最後の挨拶/クレジット
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
 
-Friday Night Funkin' is made by ninjamuffin99 (programmer), PhantomArcade (animator), kawaisprite (musician), and evilsk8r (artist)
+Friday Night Funkin'はninjamuffin99（プログラマー）、PhantomArcade（アニメーター）、kawaisprite（ミュージシャン）、evilsk8r（アーティスト）により制作されました。
 
 https://twitter.com/ninja_muffin99
 https://twitter.com/phantomarcade3k
 https://twitter.com/kawaisprite
 https://twitter.com/evilsk8r
 
-Pico is created by Tom Fulp
-Skid and Pump are created by SrPelo
-BassetFilms did music for lemon monster songs
+PicoはTom Fulpの作品
+SkidとPumpはSrPeloの作品。
+BassetFilmsはLemon Monsterの曲の音楽をやった
 
 
-Final important thing, this is made with the support and love to and from Newgrounds.com.
-Go to newgrounds, we love newgrounds. newgrounds good. How many times do I gotta damn say it. Newgrounds newgrounds newgrounds newgrounds
-I love Tom Fulp.
+最後の重要なことは、FNF'はNewgrounds.comへのサポートと愛とから作られているということです。
+Newgroundsに行く、我々はNewgroundsを愛しています。何回私はいまいましいそれを言わなければならないんだNewgroundsNewgroundsNewgroundsNewgroundsNewgrounds
+私はTom Fulpが大好きです。
 
 - Cameron ♪(´▽｀)
 
@@ -89,4 +88,4 @@ I love Tom Fulp.
                                       /      /                                    
                                                                                   
 ##################################################################################
-i stole this from stamper.
+これはスタンパーから盗んｄ
