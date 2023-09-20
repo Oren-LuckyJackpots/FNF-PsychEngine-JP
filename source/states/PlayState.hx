@@ -1142,11 +1142,11 @@ class PlayState extends MusicBeatState
 		+ ' | ミス数: ' + songMisses
 		+ ' | 精度: ' + percent + "% " + ratingFC;
 
-		#if MODS_ALLOWED
-		scoreTxt.text = 'Score: ' + songScore
-		+ ' | Misses: ' + songMisses
-		+ ' | Accuracy: ' + percent + "% " + ratingFC;
-		#end // if mods enable, this will be enable
+		// #if MODS_ALLOWED
+		// scoreTxt.text = 'Score: ' + songScore
+		// + ' | Misses: ' + songMisses
+		// + ' | Accuracy: ' + percent + "% " + ratingFC;
+		// #end // if mods enable, this will be enable
 
 		if(ClientPrefs.data.scoreZoom && !miss && !cpuControlled)
 		{
