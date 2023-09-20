@@ -111,8 +111,6 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	var nextAccept:Int = 5;
 	var holdTime:Float = 0;
 	var holdValue:Float = 0;
-	var descTimer:FlxTimer;
-	var finalText:String;
 	override function update(elapsed:Float)
 	{
 		if (controls.UI_UP_P)
@@ -264,28 +262,8 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			curSelected = 0;
 
 		descText.text = optionsArray[curSelected].description;
-		if (finalText != optionsArray[curSelected].description)
-		{
-			var textSplit = [];
-			finalText = optionsArray[curSelected].description;
-			textSplit = finalText.split("");
-
-			var loopTimes = 0;
-			descTimer = new FlxTimer().start(0.025, function(tmr:FlxTimer)
-			{
-				//
-				descText.text += textSplit[loopTimes];
-				descText.screenCenter(X);
-					loopTimes++;
-			}, textSplit.length);
-		}
-			descText.screenCenter(Y);
+		descText.screenCenter(Y);
 		descText.y += 270;
-
-		if (descTimer != null)
-			descTimer.cancel();
-		if (descText != null)
-			descText.text = "";
 
 		var bullShit:Int = 0;
 
