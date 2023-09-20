@@ -388,7 +388,7 @@ class FreeplayState extends MusicBeatState
 			destroyFreeplayVocals();
 			#if MODS_ALLOWED
 			DiscordClient.loadModRPC();
-			Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - FREE PLAY - Selecting to:" + songs[curSelected].songName;
+			Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - FREE PLAY - Selecting to: " + songs[curSelected].songName;
 			#end
 		}
 		else if(controls.RESET)

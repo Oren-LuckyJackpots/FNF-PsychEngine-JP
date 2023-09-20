@@ -3,6 +3,8 @@ package options;
 import states.MainMenuState;
 import openfl.Lib;
 import backend.StageData;
+import flixel.addons.display.FlxGridOverlay;
+import flixel.addons.display.FlxBackdrop;
 
 class OptionsState extends MusicBeatState
 {
@@ -45,6 +47,13 @@ class OptionsState extends MusicBeatState
 
 		bg.screenCenter();
 		add(bg);
+
+		var grid:FlxBackdrop = new FlxBackdrop(FlxGridOverlay.createGrid(80, 80, 160, 160, true, 0x33FFFFFF, 0x0));
+		grid.velocity.set(40, 40);
+		grid.alpha = 0;
+		FlxTween.tween(grid, {alpha: 1}, 0.5, {ease: FlxEase.quadOut});
+		add(grid);
+
 
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);

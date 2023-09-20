@@ -2,6 +2,8 @@ package states.editors;
 
 import openfl.Lib;
 import backend.WeekData;
+import flixel.addons.display.FlxGridOverlay;
+import flixel.addons.display.FlxBackdrop;
 
 #if MODS_ALLOWED
 import sys.FileSystem;
@@ -43,6 +45,12 @@ class MasterEditorMenu extends MusicBeatState
 		bg.scrollFactor.set();
 		bg.color = 0xFF353535;
 		add(bg);
+
+		var grid:FlxBackdrop = new FlxBackdrop(FlxGridOverlay.createGrid(80, 80, 160, 160, true, 0x33FFFFFF, 0x0));
+		grid.velocity.set(40, 40);
+		grid.alpha = 0;
+		FlxTween.tween(grid, {alpha: 1}, 0.5, {ease: FlxEase.quadOut});
+		add(grid);
 
 		grpTexts = new FlxTypedGroup<Alphabet>();
 		add(grpTexts);

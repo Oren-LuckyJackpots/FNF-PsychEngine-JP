@@ -7,6 +7,8 @@ import sys.io.File;
 
 import openfl.Lib;
 import objects.AttachedSprite;
+import flixel.addons.display.FlxGridOverlay;
+import flixel.addons.display.FlxBackdrop;
 
 class CreditsState extends MusicBeatState
 {
@@ -37,6 +39,12 @@ class CreditsState extends MusicBeatState
 		bg.antialiasing = ClientPrefs.data.antialiasing;
 		add(bg);
 		bg.screenCenter();
+
+		var grid:FlxBackdrop = new FlxBackdrop(FlxGridOverlay.createGrid(80, 80, 160, 160, true, 0x388E8E8E, 0x0));
+		grid.velocity.set(40, 40);
+		grid.alpha = 0;
+		FlxTween.tween(grid, {alpha: 1}, 0.5, {ease: FlxEase.quadOut});
+		add(grid);
 		
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);

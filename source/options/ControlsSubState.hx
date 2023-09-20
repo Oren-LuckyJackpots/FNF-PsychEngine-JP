@@ -105,6 +105,11 @@ class ControlsSubState extends MusicBeatSubstate
 		text.setScale(0.4);
 		add(text);
 
+		var titleText:Alphabet = new Alphabet(75, 45, 'Controls Settings', true);
+		titleText.setScale(0.6);
+		titleText.alpha = 0.4;
+		add(titleText);
+
 		createTexts();
 	}
 
@@ -293,14 +298,14 @@ class ControlsSubState extends MusicBeatSubstate
 					FlxTween.tween(bindingBlack, {alpha: 0.6}, 0.35, {ease: FlxEase.linear});
 					add(bindingBlack);
 
-					bindingText = new FlxText(0, 0, options[curOptions[curSelected]][3] + "に対応するキーを設定", false);
+					bindingText = new FlxText(300, 200, options[curOptions[curSelected]][3] + "に対応するキーを設定", false);
 					bindingText.setFormat(Paths.font("system.ttf"), 50, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-					bindingText.borderSize = 3;
+					bindingText.borderSize = 2;
 					add(bindingText);
 					
-					bindingText2 = new FlxText(0, 0, "Escでキャンセル\nBackspaceでキーを削除", true);
+					bindingText2 = new FlxText(350, 400, "Escでキャンセル\nBackspaceでキーを削除", true);
 					bindingText2.setFormat(Paths.font("system.ttf"), 50, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-					bindingText2.borderSize = 3;
+					bindingText2.borderSize = 2;
 					add(bindingText2);
 
 					binding = true;

@@ -101,7 +101,7 @@ class FPS extends TextField
 			text += "\nstage3DDC: " + Context3DStats.contextDrawCalls(DrawCallContext.STAGE3D);
 			#end
 
-			text += "\nPE-JP v0.7.1h-1.0.0";
+			text += "\nPE-JP v" + states.MainMenuState.psychEngineJPVersion;
 
 			text += "\n";
 		}

@@ -2,6 +2,8 @@ package options;
 
 import objects.CheckboxThingie;
 import objects.AttachedText;
+import flixel.addons.display.FlxGridOverlay;
+import flixel.addons.display.FlxBackdrop;
 import options.Option;
 
 class BaseOptionsMenu extends MusicBeatSubstate
@@ -36,6 +38,12 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.data.antialiasing;
 		add(bg);
+
+		var grid:FlxBackdrop = new FlxBackdrop(FlxGridOverlay.createGrid(80, 80, 160, 160, true, 0x33FFFFFF, 0x0));
+		grid.velocity.set(40, 40);
+		grid.alpha = 0;
+		FlxTween.tween(grid, {alpha: 1}, 0.5, {ease: FlxEase.quadOut});
+		add(grid);
 
 		// avoids lagspikes while scrolling through menus!
 		grpOptions = new FlxTypedGroup<Alphabet>();
@@ -103,6 +111,8 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	var nextAccept:Int = 5;
 	var holdTime:Float = 0;
 	var holdValue:Float = 0;
+	var descTimer:FlxTimer;
+	var finalText:String;
 	override function update(elapsed:Float)
 	{
 		if (controls.UI_UP_P)
@@ -254,8 +264,28 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			curSelected = 0;
 
 		descText.text = optionsArray[curSelected].description;
-		descText.screenCenter(Y);
+		if (finalText != optionsArray[curSelected].description)
+		{
+			var textSplit = [];
+			finalText = optionsArray[curSelected].description;
+			textSplit = finalText.split("");
+
+			var loopTimes = 0;
+			descTimer = new FlxTimer().start(0.025, function(tmr:FlxTimer)
+			{
+				//
+				descText.text += textSplit[loopTimes];
+				descText.screenCenter(X);
+					loopTimes++;
+			}, textSplit.length);
+		}
+			descText.screenCenter(Y);
 		descText.y += 270;
+
+		if (descTimer != null)
+			descTimer.cancel();
+		if (descText != null)
+			descText.text = "";
 
 		var bullShit:Int = 0;
 
