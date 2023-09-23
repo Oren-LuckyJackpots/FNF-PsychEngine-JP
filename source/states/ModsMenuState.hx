@@ -5,6 +5,8 @@ import backend.Mods;
 
 import flixel.ui.FlxButton;
 import flixel.FlxBasic;
+import flixel.addons.display.FlxGridOverlay;
+import flixel.addons.display.FlxBackdrop;
 import openfl.Lib;
 import openfl.display.BitmapData;
 import flash.geom.Rectangle;
@@ -70,6 +72,12 @@ class ModsMenuState extends MusicBeatState
 		bg.antialiasing = ClientPrefs.data.antialiasing;
 		add(bg);
 		bg.screenCenter();
+
+		var grid:FlxBackdrop = new FlxBackdrop(FlxGridOverlay.createGrid(80, 80, 160, 160, true, 0x388E8E8E, 0x0));
+		grid.velocity.set(40, 40);
+		grid.alpha = 0;
+		FlxTween.tween(grid, {alpha: 1}, 0.5, {ease: FlxEase.quadOut});
+		add(grid);
 
 		noModsTxt = new FlxText(0, 0, FlxG.width, "MODが見つかりません。\nMODをインストールしてから見てみて下さい。", 48);
 		if(FlxG.random.bool(0.1)) noModsTxt.text += '\nBITCH LOL'; //meanie
