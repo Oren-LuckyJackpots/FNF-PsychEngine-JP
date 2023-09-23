@@ -29,6 +29,7 @@ import flixel.util.FlxSave;
 import flixel.input.keyboard.FlxKey;
 import flixel.animation.FlxAnimationController;
 import lime.utils.Assets;
+import openfl.Lib;
 import openfl.utils.Assets as OpenFlAssets;
 import openfl.events.KeyboardEvent;
 import tjson.TJSON as Json;
@@ -90,8 +91,8 @@ class PlayState extends MusicBeatState
 		['Meh', 0.69], //From 60% to 68%
 		['Nice', 0.7], //69%
 		['Good', 0.8], //From 70% to 79%
-		['Great', 0.9], //From 80% to 89%
-		['Sick!', 1], //From 90% to 99%
+		['Great!', 0.9], //From 80% to 89%
+		['Sick!!', 1], //From 90% to 99%
 		['Perfect!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
 	];
 
@@ -402,6 +403,10 @@ class PlayState extends MusicBeatState
 		add(dadGroup);
 		add(boyfriendGroup);
 
+		#if desktop
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - " + SONG.song;
+		#end
+
 		#if LUA_ALLOWED
 		luaDebugGroup = new FlxTypedGroup<DebugLuaText>();
 		luaDebugGroup.cameras = [camOther];
@@ -467,7 +472,7 @@ class PlayState extends MusicBeatState
 		Conductor.songPosition = -5000 / Conductor.songPosition;
 		var showTime:Bool = (ClientPrefs.data.timeBarType != 'Disabled');
 		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 32);
-		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		timeTxt.setFormat(Paths.font("VCR OSD Mono.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
 		timeTxt.alpha = 0;
 		timeTxt.borderSize = 2;
@@ -549,7 +554,7 @@ class PlayState extends MusicBeatState
 		add(scoreTxt);
 
 		botplayTxt = new FlxText(400, timeBar.y + 55, FlxG.width - 800, "BOTPLAY", 32);
-		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		botplayTxt.setFormat(Paths.font("VCR OSD Mono.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
@@ -654,6 +659,8 @@ class PlayState extends MusicBeatState
 		CustomFadeTransition.nextCamera = camOther;
 		if(eventNotes.length < 1) checkEventNote();
 	}
+	function initHScript(arg0:String) {}
+
 
 	function set_songSpeed(value:Float):Float
 	{
@@ -1128,12 +1135,18 @@ class PlayState extends MusicBeatState
 		if(totalPlayed != 0)
 		{
 			var percent:Float = CoolUtil.floorDecimal(ratingPercent * 100, 2);
-			str += ' ($percent%) - $ratingFC';
+			str += ' $percent% $ratingFC';
 		}
+		var percent:Float = CoolUtil.floorDecimal(ratingPercent * 100, 2);
+		scoreTxt.text = 'スコア: ' + songScore
+		+ ' | ミス数: ' + songMisses
+		+ ' | 精度: ' + percent + "% " + ratingFC;
 
-		scoreTxt.text = 'Score: ' + songScore
-		+ ' | Misses: ' + songMisses
-		+ ' | Rating: ' + str;
+		// #if MODS_ALLOWED
+		// scoreTxt.text = 'Score: ' + songScore
+		// + ' | Misses: ' + songMisses
+		// + ' | Accuracy: ' + percent + "% " + ratingFC;
+		// #end // if mods enable, this will be enable
 
 		if(ClientPrefs.data.scoreZoom && !miss && !cpuControlled)
 		{
@@ -1560,7 +1573,7 @@ class PlayState extends MusicBeatState
 		#if desktop
 		if (cond)
 			DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter(), true, songLength - Conductor.songPosition - ClientPrefs.data.noteOffset);
-		else
+		#else
 			DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
 		#end
 	}
@@ -3379,15 +3392,15 @@ class PlayState extends MusicBeatState
 		var bads:Int = ratingsData[2].hits;
 		var shits:Int = ratingsData[3].hits;
 
-		ratingFC = 'Clear';
+		ratingFC = '[Clear]';
 		if(songMisses < 1)
 		{
-			if (bads > 0 || shits > 0) ratingFC = 'FC';
-			else if (goods > 0) ratingFC = 'GFC';
-			else if (sicks > 0) ratingFC = 'SFC';
+			if (bads > 0 || shits > 0) ratingFC = '[FC]';
+			else if (goods > 0) ratingFC = '[GFC]';
+			else if (sicks > 0) ratingFC = '[SFC]';
 		}
 		else if (songMisses < 10)
-			ratingFC = 'SDCB';
+			ratingFC = '[SDCB]';
 	}
 
 	#if ACHIEVEMENTS_ALLOWED

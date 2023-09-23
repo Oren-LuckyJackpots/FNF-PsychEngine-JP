@@ -1,0 +1,5 @@
+art/に入っている「nokiafc22.ttf」をC:\[ユーザー名]\haxelib\flixel\[バージョン名]\assets\fontsにある「nokiafc22.ttf」に上書きして下さい
+(バックアップを取っておくことをおすすめします)
+
+Overwrite "nokiafc22.ttf" in /art/ with "nokiafc22.ttf" in "C:\[user name]\haxelib\flixel\[version name]\assets\fonts"
+(It is recommended to make a backup)

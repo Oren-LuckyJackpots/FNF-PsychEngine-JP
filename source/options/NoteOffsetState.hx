@@ -500,9 +500,9 @@ class NoteOffsetState extends MusicBeatState
 		{
 			switch(i)
 			{
-				case 0: dumbTexts.members[i].text = 'Rating Offset:';
+				case 0: dumbTexts.members[i].text = '判定の表示位置[X, Y]:';
 				case 1: dumbTexts.members[i].text = '[' + ClientPrefs.data.comboOffset[0] + ', ' + ClientPrefs.data.comboOffset[1] + ']';
-				case 2: dumbTexts.members[i].text = 'Numbers Offset:';
+				case 2: dumbTexts.members[i].text = 'コンボ数の表示位置[X, Y]:';
 				case 3: dumbTexts.members[i].text = '[' + ClientPrefs.data.comboOffset[2] + ', ' + ClientPrefs.data.comboOffset[3] + ']';
 			}
 		}
@@ -511,7 +511,7 @@ class NoteOffsetState extends MusicBeatState
 	function updateNoteDelay()
 	{
 		ClientPrefs.data.noteOffset = Math.round(barPercent);
-		timeTxt.text = 'Current offset: ' + Math.floor(barPercent) + ' ms';
+		timeTxt.text = '現在: ' + Math.floor(barPercent) + ' ミリ秒';
 	}
 
 	function updateMode()
@@ -535,14 +535,14 @@ class NoteOffsetState extends MusicBeatState
 		var str:String;
 		var str2:String;
 		if(onComboMenu)
-			str = 'Combo Offset';
+			str = 'コンボ系';
 		else
-			str = 'Note/Beat Delay';
+			str = 'ノーツ/ビート';
 
 		if(!controls.controllerMode)
-			str2 = '(Press Accept to Switch)';
+			str2 = '(Acceptに設定したキーで次の設定へ)';
 		else
-			str2 = '(Press Start to Switch)';
+			str2 = '(Startに設定したキーで次の設定へ)';
 
 		changeModeText.text = '< ${str.toUpperCase()} ${str2.toUpperCase()} >';
 	}

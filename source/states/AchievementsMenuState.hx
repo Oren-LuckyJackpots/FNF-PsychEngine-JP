@@ -1,5 +1,6 @@
 package states;
 
+import openfl.Lib;
 import backend.Achievements;
 import objects.AttachedAchievement;
 
@@ -16,6 +17,7 @@ class AchievementsMenuState extends MusicBeatState
 	override function create() {
 		#if desktop
 		DiscordClient.changePresence("Achievements Menu", null);
+		Lib.application.window.title = "Friday Night Funkin': Psych Engine-JP v" + states.MainMenuState.psychEngineJPVersion + " - Achivements Menu";
 		#end
 
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGBlue'));

@@ -120,13 +120,13 @@ class EditorPlayState extends MusicBeatSubstate
 		scoreTxt.visible = !ClientPrefs.data.hideHud;
 		add(scoreTxt);
 		
-		dataTxt = new FlxText(10, 580, FlxG.width - 20, "Section: 0", 20);
+		dataTxt = new FlxText(10, 580, FlxG.width - 20, "セクション: 0", 20);
 		dataTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		dataTxt.scrollFactor.set();
 		dataTxt.borderSize = 1.25;
 		add(dataTxt);
 
-		var tipText:FlxText = new FlxText(10, FlxG.height - 24, 0, 'Press ESC to Go Back to Chart Editor', 16);
+		var tipText:FlxText = new FlxText(10, FlxG.height - 24, 0, 'Escでチャートエディターへ戻る', 16);
 		tipText.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		tipText.borderSize = 2;
 		tipText.scrollFactor.set();
@@ -140,7 +140,7 @@ class EditorPlayState extends MusicBeatSubstate
 		
 		#if desktop
 		// Updating Discord Rich Presence (with Time Left)
-		DiscordClient.changePresence('Playtesting on Chart Editor', PlayState.SONG.song, null, true, songLength);
+		DiscordClient.changePresence('チャートテスト中', PlayState.SONG.song, null, true, songLength);
 		#end
 		RecalculateRating();
 	}
@@ -213,7 +213,7 @@ class EditorPlayState extends MusicBeatSubstate
 		}
 		
 		var time:Float = CoolUtil.floorDecimal((Conductor.songPosition - ClientPrefs.data.noteOffset) / 1000, 1);
-		dataTxt.text = 'Time: $time / ${songLength/1000}\nSection: $curSection\nBeat: $curBeat\nStep: $curStep';
+		dataTxt.text = '$time秒 / ${songLength/1000}秒\nセクション: $curSection\nビート: $curBeat\nステップ: $curStep';
 		super.update(elapsed);
 	}
 	
@@ -885,9 +885,9 @@ class EditorPlayState extends MusicBeatSubstate
 		if(totalPlayed != 0)
 		{
 			var percent:Float = CoolUtil.floorDecimal(ratingPercent * 100, 2);
-			str = '$percent% - $ratingFC';
+			str = '$percent% [$ratingFC]';
 		}
-		scoreTxt.text = 'Hits: $songHits | Misses: $songMisses | Rating: $str';
+		scoreTxt.text = 'ノーツヒット数: $songHits | ミス数: $songMisses | 精度: $str';
 	}
 	
 	function fullComboUpdate()
