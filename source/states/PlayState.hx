@@ -1140,7 +1140,7 @@ class PlayState extends MusicBeatState
 		var percent:Float = CoolUtil.floorDecimal(ratingPercent * 100, 2);
 		scoreTxt.text = 'スコア: ' + songScore
 		+ ' | ミス数: ' + songMisses
-		+ ' | 精度: ' + percent + "% " + ratingFC;
+		+ ' | 精度: ' + percent + "% " + "[" + ratingFC + "]";
 
 		// #if MODS_ALLOWED
 		// scoreTxt.text = 'Score: ' + songScore
@@ -3392,15 +3392,15 @@ class PlayState extends MusicBeatState
 		var bads:Int = ratingsData[2].hits;
 		var shits:Int = ratingsData[3].hits;
 
-		ratingFC = '[Clear]';
+		ratingFC = 'Clear';
 		if(songMisses < 1)
 		{
-			if (bads > 0 || shits > 0) ratingFC = '[FC]';
-			else if (goods > 0) ratingFC = '[GFC]';
-			else if (sicks > 0) ratingFC = '[SFC]';
+			if (bads > 0 || shits > 0) ratingFC = 'FC';
+			else if (goods > 0) ratingFC = 'GFC';
+			else if (sicks > 0) ratingFC = 'SFC';
 		}
 		else if (songMisses < 10)
-			ratingFC = '[SDCB]';
+			ratingFC = 'SDCB';
 	}
 
 	#if ACHIEVEMENTS_ALLOWED
