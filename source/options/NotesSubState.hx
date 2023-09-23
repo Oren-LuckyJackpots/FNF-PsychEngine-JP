@@ -50,7 +50,7 @@ class NotesSubState extends MusicBeatSubstate
 
 	public function new() {
 		super();
-		
+
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		bg.color = 0xFFEA71FD;
 		bg.screenCenter();
@@ -123,6 +123,11 @@ class NotesSubState extends MusicBeatSubstate
 		colorWheelSelector.alpha = 0.6;
 		add(colorWheelSelector);
 
+		var titleText:Alphabet = new Alphabet(75, 45, 'Note Color Settings', true);
+		titleText.setScale(0.6);
+		titleText.alpha = 0.4;
+		add(titleText);
+
 		var txtX = 980;
 		var txtY = 90;
 		alphabetR = makeColorAlphabet(txtX - 100, txtY);
@@ -143,14 +148,14 @@ class NotesSubState extends MusicBeatSubstate
 
 		var tipX = 20;
 		var tipY = 660;
-		var tip:FlxText = new FlxText(tipX, tipY, 0, "Press RELOAD to Reset the selected Note Part.", 16);
-		tip.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		tip.borderSize = 2;
+		var tip:FlxText = new FlxText(tipX, tipY, 0, "RELOAD を押して選択したノーツパートをリセット", 16);
+		tip.setFormat(Paths.font("system.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		tip.borderSize = 1.5;
 		add(tip);
 
 		tipTxt = new FlxText(tipX, tipY + 24, 0, '', 16);
-		tipTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		tipTxt.borderSize = 2;
+		tipTxt.setFormat(Paths.font("system.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		tipTxt.borderSize = 1.5;
 		add(tipTxt);
 		updateTip();
 
@@ -167,7 +172,7 @@ class NotesSubState extends MusicBeatSubstate
 
 	function updateTip()
 	{
-		tipTxt.text = 'Hold ' + (!controls.controllerMode ? 'Shift' : 'Left Shoulder Button') + ' + Press RELOAD to fully reset the selected Note.';
+		tipTxt.text = (!controls.controllerMode ? 'Shift' : '左肩のボタン') + 'を押しながらRELOADに設定したキーを押して、選択したノーツを完全にリセット';
 	}
 
 	var _storedColor:FlxColor;

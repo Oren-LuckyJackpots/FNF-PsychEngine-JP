@@ -5,48 +5,48 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 	public function new()
 	{
 		title = 'Gameplay Settings';
-		rpcTitle = 'Gameplay Settings Menu'; //for Discord Rich Presence
+		rpcTitle = 'ゲームプレイ設定'; //for Discord Rich Presence
 
 		//I'd suggest using "Downscroll" as an example for making your own option since it is the simplest here
 		var option:Option = new Option('Downscroll', //Name
-			'If checked, notes go Down instead of Up, simple enough.', //Description
+			'ノーツが上から降ってくるようになります。\nHUDやUIの位置も変わります。', //Description
 			'downScroll', //Save data variable name
 			'bool'); //Variable type
 		addOption(option);
 
 		var option:Option = new Option('Middlescroll',
-			'If checked, your notes get centered.',
+			'自分のノーツが真ん中に落ちてきます。\n(相手のノーツは左右に別れます)',
 			'middleScroll',
 			'bool');
 		addOption(option);
 
 		var option:Option = new Option('Opponent Notes',
-			'If unchecked, opponent notes get hidden.',
+			'敵のノーツを表示します。',
 			'opponentStrums',
 			'bool');
 		addOption(option);
 
 		var option:Option = new Option('Ghost Tapping',
-			"If checked, you won't get misses from pressing keys\nwhile there are no notes able to be hit.",
+			"ノーツ以外の所でキーを叩いてもミスにならなくなります。",
 			'ghostTapping',
 			'bool');
 		addOption(option);
 		
 		var option:Option = new Option('Auto Pause',
-			"If checked, the game automatically pauses if the screen isn't on focus.",
+			"他のウィンドウに移動した場合、自動でポーズします。",
 			'autoPause',
 			'bool');
 		addOption(option);
 		option.onChange = onChangeAutoPause;
 
 		var option:Option = new Option('Disable Reset Button',
-			"If checked, pressing Reset won't do anything.",
+			"リセットキーによる不意なゲームオーバーを無効にします。",
 			'noReset',
 			'bool');
 		addOption(option);
 
 		var option:Option = new Option('Hitsound Volume',
-			'Funny notes does \"Tick!\" when you hit them."',
+			'ノーツのヒット時の音量を調整します。',
 			'hitsoundVolume',
 			'percent');
 		addOption(option);
@@ -58,7 +58,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		option.onChange = onChangeHitsoundVolume;
 
 		var option:Option = new Option('Rating Offset',
-			'Changes how late/early you have to hit for a "Sick!"\nHigher values mean you have to hit later.',
+			'Sick!!を打つタイミングを調整します。',
 			'ratingOffset',
 			'int');
 		option.displayFormat = '%vms';
@@ -68,7 +68,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Sick! Hit Window',
-			'Changes the amount of time you have\nfor hitting a "Sick!" in milliseconds.',
+			'Sick!!判定になる時間をミリ秒単位で調整します。',
 			'sickWindow',
 			'int');
 		option.displayFormat = '%vms';
@@ -78,7 +78,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Good Hit Window',
-			'Changes the amount of time you have\nfor hitting a "Good" in milliseconds.',
+			'Good!判定になる時間をミリ秒単位で調整します。',
 			'goodWindow',
 			'int');
 		option.displayFormat = '%vms';
@@ -88,7 +88,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Bad Hit Window',
-			'Changes the amount of time you have\nfor hitting a "Bad" in milliseconds.',
+			'Bad判定になる時間をミリ秒単位で調整します。',
 			'badWindow',
 			'int');
 		option.displayFormat = '%vms';
@@ -98,7 +98,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Safe Frames',
-			'Changes how many frames you have for\nhitting a note earlier or late.',
+			'ミス判定にならない範囲を調整します。',
 			'safeFrames',
 			'float');
 		option.scrollSpeed = 5;

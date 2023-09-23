@@ -13,7 +13,7 @@ class VisualsUISubState extends BaseOptionsMenu
 	public function new()
 	{
 		title = 'Visuals and UI';
-		rpcTitle = 'Visuals & UI Settings Menu'; //for Discord Rich Presence
+		rpcTitle = 'VisualやUIに関する設定'; //for Discord Rich Presence
 
 		// for note skins
 		notes = new FlxTypedGroup<StrumNote>();
@@ -36,7 +36,7 @@ class VisualsUISubState extends BaseOptionsMenu
 
 			noteSkins.insert(0, ClientPrefs.defaultData.noteSkin); //Default skin always comes first
 			var option:Option = new Option('Note Skins:',
-				"Select your prefered Note skin.",
+				"ノーツスキンを選べます。",
 				'noteSkin',
 				'string',
 				noteSkins);
@@ -53,7 +53,7 @@ class VisualsUISubState extends BaseOptionsMenu
 
 			noteSplashes.insert(0, ClientPrefs.defaultData.splashSkin); //Default skin always comes first
 			var option:Option = new Option('Note Splashes:',
-				"Select your prefered Note Splash variation or turn it off.",
+				"ノーツスプラッシュスキンを選べます。\nOFFにもできます。",
 				'splashSkin',
 				'string',
 				noteSplashes);
@@ -61,7 +61,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		}
 
 		var option:Option = new Option('Note Splash Opacity',
-			'How much transparent should the Note Splashes be.',
+			'ノーツスプラッシュの透明度を調整します。',
 			'splashAlpha',
 			'percent');
 		option.scrollSpeed = 1.6;
@@ -72,38 +72,38 @@ class VisualsUISubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Hide HUD',
-			'If checked, hides most HUD elements.',
+			'HUDを非表示にします。',
 			'hideHud',
 			'bool');
 		addOption(option);
 		
 		var option:Option = new Option('Time Bar:',
-			"What should the Time Bar display?",
+			"タイムバーのスタイルを選択します。",
 			'timeBarType',
 			'string',
 			['Time Left', 'Time Elapsed', 'Song Name', 'Disabled']);
 		addOption(option);
 
 		var option:Option = new Option('Flashing Lights',
-			"Uncheck this if you're sensitive to flashing lights!",
+			"点滅光による症状などを持っている人はこのオプションを必ずOFFにして下さい！",
 			'flashing',
 			'bool');
 		addOption(option);
 
 		var option:Option = new Option('Camera Zooms',
-			"If unchecked, the camera won't zoom in on a beat hit.",
+			"ビートヒット時にカメラをズームします。",
 			'camZooms',
 			'bool');
 		addOption(option);
 
 		var option:Option = new Option('Score Text Zoom on Hit',
-			"If unchecked, disables the Score text zooming\neverytime you hit a note.",
+			"ノーツがヒットした時にスコアテキストがズームされます。",
 			'scoreZoom',
 			'bool');
 		addOption(option);
 
 		var option:Option = new Option('Health Bar Opacity',
-			'How much transparent should the health bar and icons be.',
+			'ヘルスバーの透明度を調整します。',
 			'healthBarAlpha',
 			'percent');
 		option.scrollSpeed = 1.6;
@@ -115,7 +115,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		
 		#if !mobile
 		var option:Option = new Option('FPS Counter',
-			'If unchecked, hides FPS Counter.',
+			'FPSとメモリ使用量を左上に常時表示します。',
 			'showFPS',
 			'bool');
 		addOption(option);
@@ -123,7 +123,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		#end
 		
 		var option:Option = new Option('Pause Screen Song:',
-			"What song do you prefer for the Pause Screen?",
+			"ポーズ時の音楽を変更できます。",
 			'pauseMusic',
 			'string',
 			['None', 'Breakfast', 'Tea Time']);
@@ -132,7 +132,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		
 		#if CHECK_FOR_UPDATES
 		var option:Option = new Option('Check for Updates',
-			'On Release builds, turn this on to check for updates when you start the game.',
+			'新しいバージョンが出た場合、起動時に警告を表示させます。',
 			'checkForUpdates',
 			'bool');
 		addOption(option);
@@ -140,14 +140,14 @@ class VisualsUISubState extends BaseOptionsMenu
 
 		#if desktop
 		var option:Option = new Option('Discord Rich Presence',
-			"Uncheck this to prevent accidental leaks, it will hide the Application from your \"Playing\" box on Discord",
+			"DiscordにFNF'のプレイ状況を送信します。",
 			'discordRPC',
 			'bool');
 		addOption(option);
 		#end
 
 		var option:Option = new Option('Combo Stacking',
-			"If unchecked, Ratings and Combo won't stack, saving on System Memory and making them easier to read",
+			"評価やミス数を記録します。",
 			'comboStacking',
 			'bool');
 		addOption(option);
