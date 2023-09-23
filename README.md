@@ -23,6 +23,8 @@
 
 [本家FRIDAY NIGHT FUNKIN'](https://www.newgrounds.com/portal/view/770371/)
 
+[Psych Engine-JP Official Site](https://friday-night-funking-jp.jimdofree.com/)
+
 [Psych Engine](https://gamebanana.com/mods/309789/)
 
 [JPsych Engine](https://fnf-jpsych-engine.jimdofree.com/)
@@ -63,6 +65,8 @@ Also, please let Shundesu know what you're doing with 𝕏 and stuff, and feel f
 ## Link
 
 [FRIDAY NIGHT FUNKIN'](https://www.newgrounds.com/portal/view/770371/)
+
+[Psych Engine-JP Official Site](https://friday-night-funking-jp.jimdofree.com/)
 
 [Psych Engine](https://gamebanana.com/mods/309789/)
 
