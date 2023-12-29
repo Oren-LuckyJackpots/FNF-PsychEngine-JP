@@ -75,6 +75,11 @@ class SaveVariables {
 	public var safeFrames:Float = 10;
 	public var discordRPC:Bool = true;
 
+	public var gokan:Bool = false;
+	public var alljapanese:Bool = false;
+	public var jpforengier:Bool = false;
+	public var jpmode:Bool = true;
+
 	public function new()
 	{
 		//Why does haxe needs this again?
